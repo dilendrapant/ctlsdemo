@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Source of Energy</title>
+	<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<link rel="stylesheet" href="/resources/demos/style.css"> -->
+
+	<style>
+	@media screen and (max-width: 1920px) {
+	
+	body, html {
+	  height: 100%;
+	  margin: 0;
+	  overflow: hidden;
+	}
+	
+	.bg {
+	  /* The image used */
+	  background-image: url("bg.jpg");
+	  /* Full height */ 	
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+
+	.logo {
+	  /* The image used */
+	position: absolute;
+	top:1%;
+	left: 88%;
+	background: url("logo.png");
+  	background-repeat: no-repeat;
+ 	background-size: 150px 60px;
+	height: 70%;
+	width: 70%;
+	  /*background-size: cover;*/
+	}
+
+	.centered {
+
+	  position: absolute;
+
+	  -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+
+	  text-align: center;
+	  vertical-align: middle;
+	  top: 5%;
+	  left: 50%;
+	  width: 100%;
+	  transform: translate(-50%, -50%);
+	  font-size: 25px;
+	  font-style: normal;
+	  font-weight: bold;
+	  color: black;
+	  font-family: "Helvetica";
+
+	}
+	.optionBG{
+		position:absolute;
+	    width:100%;
+	    height:50px;
+	    /*background:#fff;*/
+	   /* padding-bottom: 55px;*/
+	    bottom:55px;
+	    text-align: center;
+	}
+	.DragObject{
+		position: relative;
+		display: inline-block;
+		background-color: #ccff7f;
+		width: 140px;
+		height: 35px;
+		text-align: center;
+		border: 1px solid #000;
+		line-height: 35px;
+
+	}
+
+	.DropObject{
+		position: absolute;
+		background-color: #ffffff;
+		width: 140px;
+		height: 35px;
+		text-align: center;
+		border: 1px solid #000;
+	}
+
+	.DragWaleObject{
+
+		position: relative;
+		display: inline-block;
+		background-image: linear-gradient(#296846, #094E29);
+		background-color: #296846;
+		width: 140px;
+		height: 35px;
+		text-align: center;
+		color: #fff;
+		line-height: 35px;
+		border: 1px solid #000;
+		font-family:    Arial, Helvetica, sans-serif;
+        font-size:      19px;
+        /*font-weight:    bold;*/
+
+        -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+		
+	}
+
+	.submitButton{
+		
+		background-image: linear-gradient(#0A55AC, #064083);
+		background-color: #0A55AC;
+		border-radius: 9px;
+		cursor: pointer;
+		color: white
+		font-family: "Helvetica";
+		font-weight: 100;
+		font-size: 20px;
+		padding: 10px;
+		text-decoration: none;
+		text-align: center;
+
+	}
+
+	.checkBtnLocation{
+		position: absolute;
+		width: 90px;
+			/*top:40%;*/
+		left: 75%;
+		font-family:    Arial, Helvetica, sans-serif;
+		color: white;
+		/*padding-bottom: 40px;*/
+	    bottom:10px;
+	    
+	}
+
+	.resetBtnLocation{
+		position: absolute;
+		width: 90px;
+		
+		left: 83%;
+		bottom:10px;
+		font-family:    Arial, Helvetica, sans-serif;
+		color: white;
+	}
+	
+	.submitButton:hover{
+		background-image: linear-gradient(#3486E4, #2974C9);
+		background-color: #3486E4;
+	}
+
+
+	.droppable_1{
+		top:48%; left: 10%;
+	}
+
+	.droppable_2{
+		top:22%; left: 10%;
+	}
+
+	.droppable_3{
+		top:35%; left: 10%;
+	}
+
+	.droppable_4{
+		top:58%; left: 82%;
+	}
+
+	.droppable_5{
+		top:15%; left: 82%;
+	}
+
+	.droppable_6{
+		top:27%; left: 82%;
+	}
+
+	.droppable_7{
+		top:38%; left: 82%;
+	}
+
+	.droppable_8{
+		top:69%; left: 82%;
+	}
+
+	.droppable_9{
+		top:80%; left: 82%;
+	}
+}
+
+
+@media screen and (max-width: 1680px) {
+	
+	body, html {
+	  height: 100%;
+	  margin: 0;
+	  overflow: hidden;
+	}
+	
+	.bg {
+	  /* The image used */
+	  background-image: url("bg.jpg");
+	  /* Full height */ 	
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+
+	.logo {
+	  /* The image used */
+	position: absolute;
+	top:1%;
+	left: 88%;
+	background: url("logo.png");
+  	background-repeat: no-repeat;
+ 	background-size: 150px 60px;
+	height: 70%;
+	width: 70%;
+	  /*background-size: cover;*/
+	}
+
+	.centered {
+
+	  position: absolute;
+
+	  -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+
+	  text-align: center;
+	  vertical-align: middle;
+	  top: 5%;
+	  left: 50%;
+	  width: 100%;
+	  transform: translate(-50%, -50%);
+	  font-size: 25px;
+	  font-style: normal;
+	  font-weight: bold;
+	  color: black;
+	  font-family: "Helvetica";
+
+	}
+	.optionBG{
+		position:absolute;
+	    width:100%;
+	    height:50px;
+	    /*background:#fff;*/
+	   /* padding-bottom: 55px;*/
+	    bottom:55px;
+	    text-align: center;
+	}
+	.DragObject{
+		position: relative;
+		display: inline-block;
+		background-color: #ccff7f;
+		width: 140px;
+		height: 35px;
+		text-align: center;
+		border: 1px solid #000;
+		line-height: 35px;
+
+	}
+
+	.DropObject{
+		position: absolute;
+		background-color: #ffffff;
+		width: 140px;
+		height: 35px;
+		text-align: center;
+		border: 1px solid #000;
+	}
+
+	.DragWaleObject{
+
+		position: relative;
+		display: inline-block;
+		background-image: linear-gradient(#296846, #094E29);
+		background-color: #296846;
+		width: 140px;
+		height: 35px;
+		text-align: center;
+		color: #fff;
+		line-height: 35px;
+		border: 1px solid #000;
+		font-family:    Arial, Helvetica, sans-serif;
+        font-size:      19px;
+        /*font-weight:    bold;*/
+
+        -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+		
+	}
+
+	.submitButton{
+		
+		background-image: linear-gradient(#0A55AC, #064083);
+		background-color: #0A55AC;
+		border-radius: 9px;
+		cursor: pointer;
+		color: white
+		font-family: "Helvetica";
+		font-weight: 100;
+		font-size: 20px;
+		padding: 10px;
+		text-decoration: none;
+		text-align: center;
+
+
+	}
+
+	.checkBtnLocation{
+		position: absolute;
+		width: 90px;
+			/*top:40%;*/
+		left: 75%;
+		font-family:    Arial, Helvetica, sans-serif;
+		color: white;
+		/*padding-bottom: 40px;*/
+	    bottom:10px;
+	    
+	}
+
+	.resetBtnLocation{
+		position: absolute;
+		width: 90px;
+		
+		left: 83%;
+		bottom:10px;
+		font-family:    Arial, Helvetica, sans-serif;
+		color: white;
+	}
+	
+	.submitButton:hover{
+		background-image: linear-gradient(#3486E4, #2974C9);
+		background-color: #3486E4;
+	}
+
+	.droppable_1{
+		top:48%; left: 10%;
+	}
+
+	.droppable_2{
+		top:24%; left: 10%;
+	}
+
+	.droppable_3{
+		top:36%; left: 10%;
+	}
+
+	.droppable_4{
+		top:57%; left: 82%;
+	}
+
+	.droppable_5{
+		top:19%; left: 82%;
+	}
+
+	.droppable_6{
+		top:29%; left: 82%;
+	}
+
+	.droppable_7{
+		top:39%; left: 82%;
+	}
+
+	.droppable_8{
+		top:67%; left: 82%;
+	}
+
+	.droppable_9{
+		top:77%; left: 82%;
+	}
+}
+
+@media screen and (max-width: 1600px) {
+	
+	body, html {
+	  height: 100%;
+	  margin: 0;
+	  overflow: hidden;
+	}
+	
+	.bg {
+	  /* The image used */
+	  background-image: url("bg.jpg");
+	  /* Full height */ 	
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+
+	.logo {
+	  /* The image used */
+	position: absolute;
+	top:1%;
+	left: 88%;
+	background: url("logo.png");
+  	background-repeat: no-repeat;
+ 	background-size: 150px 60px;
+	height: 70%;
+	width: 70%;
+	  /*background-size: cover;*/
+	}
+
+	.centered {
+
+	  position: absolute;
+
+	  -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+
+	  text-align: center;
+	  vertical-align: middle;
+	  top: 5%;
+	  left: 50%;
+	  width: 100%;
+	  transform: translate(-50%, -50%);
+	  font-size: 25px;
+	  font-style: normal;
+	  font-weight: bold;
+	  color: black;
+	  font-family: "Helvetica";
+
+	}
+	.optionBG{
+		position:absolute;
+	    width:100%;
+	    height:50px;
+	    /*background:#fff;*/
+	   /* padding-bottom: 55px;*/
+	    bottom:55px;
+	    text-align: center;
+	}
+	.DragObject{
+		position: relative;
+		display: inline-block;
+		background-color: #ccff7f;
+		width: 140px;
+		height: 35px;
+		text-align: center;
+		border: 1px solid #000;
+		line-height: 35px;
+
+	}
+
+	.DropObject{
+		position: absolute;
+		background-color: #ffffff;
+		width: 140px;
+		height: 35px;
+		text-align: center;
+		border: 1px solid #000;
+	}
+
+	.DragWaleObject{
+
+		position: relative;
+		display: inline-block;
+		background-image: linear-gradient(#296846, #094E29);
+		background-color: #296846;
+		width: 140px;
+		height: 35px;
+		text-align: center;
+		color: #fff;
+		line-height: 35px;
+		border: 1px solid #000;
+		font-family:    Arial, Helvetica, sans-serif;
+        font-size:      19px;
+        /*font-weight:    bold;*/
+
+        -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+		
+	}
+
+	.submitButton{
+		
+		background-image: linear-gradient(#0A55AC, #064083);
+		background-color: #0A55AC;
+		border-radius: 9px;
+		cursor: pointer;
+		color: white
+		font-family: "Helvetica";
+		font-weight: 100;
+		font-size: 20px;
+		padding: 10px;
+		text-decoration: none;
+		text-align: center;
+
+
+	}
+
+	.checkBtnLocation{
+		position: absolute;
+		width: 90px;
+			/*top:40%;*/
+		left: 75%;
+		font-family:    Arial, Helvetica, sans-serif;
+		color: white;
+		/*padding-bottom: 40px;*/
+	    bottom:10px;
+	    
+	}
+
+	.resetBtnLocation{
+		position: absolute;
+		width: 90px;
+		
+		left: 83%;
+		bottom:10px;
+		font-family:    Arial, Helvetica, sans-serif;
+		color: white;
+	}
+	
+	.submitButton:hover{
+		background-image: linear-gradient(#3486E4, #2974C9);
+		background-color: #3486E4;
+	}
+
+	.droppable_1{
+		top:47%; left: 10%;
+	}
+
+	.droppable_2{
+		top:20%; left: 10%;
+	}
+
+	.droppable_3{
+		top:34%; left: 10%;
+	}
+
+	.droppable_4{
+		top:57.5%; left: 82%;
+	}
+
+	.droppable_5{
+		top:14%; left: 82%;
+	}
+
+	.droppable_6{
+		top:26%; left: 82%;
+	}
+
+	.droppable_7{
+		top:37%; left: 82%;
+	}
+
+	.droppable_8{
+		top:70%; left: 82%;
+	}
+
+	.droppable_9{
+		top:80%; left: 82%;
+	}
+}
+
+@media screen and (max-width: 1440px) {
+	
+	body, html {
+	  height: 100%;
+	  margin: 0;
+	  overflow: hidden;
+	}
+	
+	.bg {
+	  /* The image used */
+	  background-image: url("bg.jpg");
+	  /* Full height */ 	
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+
+	.logo {
+	  /* The image used */
+	position: absolute;
+	top:1%;
+	left: 88%;
+	background: url("logo.png");
+  	background-repeat: no-repeat;
+ 	background-size: 150px 60px;
+	height: 70%;
+	width: 70%;
+	  /*background-size: cover;*/
+	}
+
+	.centered {
+
+	  position: absolute;
+
+	  -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+
+	  text-align: center;
+	  vertical-align: middle;
+	  top: 5%;
+	  left: 50%;
+	  width: 100%;
+	  transform: translate(-50%, -50%);
+	  font-size: 25px;
+	  font-style: normal;
+	  font-weight: bold;
+	  color: black;
+	  font-family: "Helvetica";
+
+	}
+	.optionBG{
+		position:absolute;
+	    width:100%;
+	    height:50px;
+	    /*background:#fff;*/
+	   /* padding-bottom: 55px;*/
+	    bottom:55px;
+	    text-align: center;
+	}
+	.DragObject{
+		position: relative;
+		display: inline-block;
+		background-color: #ccff7f;
+		width: 120px;
+		height: 35px;
+		text-align: center;
+		border: 1px solid #000;
+		line-height: 35px;
+
+	}
+
+	.DropObject{
+		position: absolute;
+		background-color: #ffffff;
+		width: 120px;
+		height: 35px;
+		text-align: center;
+		border: 1px solid #000;
+	}
+
+	.DragWaleObject{
+
+		position: relative;
+		display: inline-block;
+		background-image: linear-gradient(#296846, #094E29);
+		background-color: #296846;
+		width: 120px;
+		height: 35px;
+		text-align: center;
+		color: #fff;
+		line-height: 35px;
+		border: 1px solid #000;
+		font-family:    Arial, Helvetica, sans-serif;
+        font-size:      19px;
+        /*font-weight:    bold;*/
+
+        -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+		
+	}
+
+	.submitButton{
+		
+		background-image: linear-gradient(#0A55AC, #064083);
+		background-color: #0A55AC;
+		border-radius: 9px;
+		cursor: pointer;
+		color: white
+		font-family: "Helvetica";
+		font-weight: 100;
+		font-size: 20px;
+		padding: 10px;
+		text-decoration: none;
+		text-align: center;
+
+
+	}
+
+	.checkBtnLocation{
+		position: absolute;
+		width: 90px;
+			/*top:40%;*/
+		left: 74%;
+		font-family:    Arial, Helvetica, sans-serif;
+		color: white;
+		/*padding-bottom: 40px;*/
+	    bottom:10px;
+	    
+	}
+
+	.resetBtnLocation{
+		position: absolute;
+		width: 90px;
+		
+		left: 83%;
+		bottom:10px;
+		font-family:    Arial, Helvetica, sans-serif;
+		color: white;
+	}
+	
+	.submitButton:hover{
+		background-image: linear-gradient(#3486E4, #2974C9);
+		background-color: #3486E4;
+	}
+
+	.droppable_1{
+		top:48%; left: 10%;
+	}
+
+	.droppable_2{
+		top:23%; left: 10%;
+	}
+
+	.droppable_3{
+		top:36%; left: 10%;
+	}
+
+	.droppable_4{
+		top:56.5%; left: 82%;
+	}
+
+	.droppable_5{
+		top:18%; left: 82%;
+	}
+
+	.droppable_6{
+		top:28%; left: 82%;
+	}
+
+	.droppable_7{
+		top:38%; left: 82%;
+	}
+
+	.droppable_8{
+		top:67%; left: 82%;
+	}
+
+	.droppable_9{
+		top:77%; left: 82%;
+	}
+}
+
+@media screen and (max-width: 1366px) {
+	
+	body, html {
+	  height: 100%;
+	  margin: 0;
+	  overflow: hidden;
+	}
+	
+	.bg {
+	  /* The image used */
+	  background-image: url("bg.jpg");
+	  /* Full height */ 	
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+
+	.logo {
+	  /* The image used */
+	position: absolute;
+	top:1%;
+	left: 88%;
+	background: url("logo.png");
+  	background-repeat: no-repeat;
+ 	background-size: 150px 60px;
+	height: 70%;
+	width: 70%;
+	  /*background-size: cover;*/
+	}
+
+	.centered {
+
+	  position: absolute;
+
+	  -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+
+	  text-align: center;
+	  vertical-align: middle;
+	  top: 5%;
+	  left: 50%;
+	  width: 100%;
+	  transform: translate(-50%, -50%);
+	  font-size: 25px;
+	  font-style: normal;
+	  font-weight: bold;
+	  color: black;
+	  font-family: "Helvetica";
+
+	}
+	.optionBG{
+		position:absolute;
+	    width:100%;
+	    height:35px;
+	    /*background:#fff;*/
+	   /* padding-bottom: 55px;*/
+	    bottom:55px;
+	    text-align: center;
+	}
+	.DragObject{
+		position: relative;
+		display: inline-block;
+		background-color: #ccff7f;
+		width: 140px;
+		height: 35px;
+		text-align: center;
+		border: 1px solid #000;
+		line-height: 35px;
+
+	}
+
+	.DropObject{
+		position: absolute;
+		background-color: #ffffff;
+		width: 140px;
+		height: 35px;
+		text-align: center;
+		border: 1px solid #000;
+	}
+
+	.DragWaleObject{
+
+		position: relative;
+		display: inline-block;
+		background-image: linear-gradient(#296846, #094E29);
+		background-color: #296846;
+		width: 140px;
+		height: 35px;
+		text-align: center;
+		color: #fff;
+		line-height: 35px;
+		border: 1px solid #000;
+		font-family:    Arial, Helvetica, sans-serif;
+        font-size:      19px;
+        /*font-weight:    bold;*/
+
+        -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+		
+	}
+
+	.submitButton{
+		
+		background-image: linear-gradient(#0A55AC, #064083);
+		background-color: #0A55AC;
+		border-radius: 9px;
+		cursor: pointer;
+		color: white
+		font-family: "Helvetica";
+		font-weight: 100;
+		font-size: 20px;
+		padding: 10px;
+		text-decoration: none;
+		text-align: center;
+
+
+	}
+
+	.checkBtnLocation{
+		position: absolute;
+		width: 90px;
+			/*top:40%;*/
+		left: 74%;
+		font-family:    Arial, Helvetica, sans-serif;
+		color: white;
+		/*padding-bottom: 40px;*/
+	    bottom:5px;
+	    
+	}
+
+	.resetBtnLocation{
+		position: absolute;
+		width: 90px;
+		
+		left: 83%;
+		bottom:5px;
+		font-family:    Arial, Helvetica, sans-serif;
+		color: white;
+	}
+	
+	.submitButton:hover{
+		background-image: linear-gradient(#3486E4, #2974C9);
+		background-color: #3486E4;
+	}
+
+
+	.droppable_1{
+		top:47%; left: 9%;
+	}
+
+	.droppable_2{
+		top:19%; left: 9%;
+	}
+
+	.droppable_3{
+		top:33%; left: 9%;
+	}
+
+	.droppable_4{
+		top:57%; left: 82%;
+	}
+
+	.droppable_5{
+		top:13%; left: 82%;
+	}
+
+	.droppable_6{
+		top:25%; left: 82%;
+	}
+
+	.droppable_7{
+		top:37%; left: 82%;
+	}
+
+	.droppable_8{
+		top:70%; left: 82%;
+	}
+
+	.droppable_9{
+		top:80%; left: 82%;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	
+	body, html {
+	  height: 100%;
+	  margin: 0;
+	  overflow: hidden;
+	}
+	
+	.bg {
+	  /* The image used */
+	  background-image: url("bg.jpg");
+	  /* Full height */ 	
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+
+	.logo {
+	  /* The image used */
+	position: absolute;
+	top:1%;
+	left: 88%;
+	background: url("logo.png");
+  	background-repeat: no-repeat;
+ 	background-size: 150px 60px;
+	height: 70%;
+	width: 70%;
+	  /*background-size: cover;*/
+	}
+
+	.centered {
+
+	  position: absolute;
+
+	  -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+
+	  text-align: center;
+	  vertical-align: middle;
+	  top: 5%;
+	  left: 50%;
+	  width: 100%;
+	  transform: translate(-50%, -50%);
+	  font-size: 25px;
+	  font-style: normal;
+	  font-weight: bold;
+	  color: black;
+	  font-family: "Helvetica";
+
+	}
+	.optionBG{
+		position:absolute;
+	    width:100%;
+	    height:50px;
+	    /*background:#fff;*/
+	   /* padding-bottom: 55px;*/
+	    bottom:27px;
+	    text-align: center;
+	}
+	.DragObject{
+		position: relative;
+		display: inline-block;
+		background-color: #ccff7f;
+		width: 120px;
+		height: 35px;
+		text-align: center;
+		border: 1px solid #000;
+		line-height: 35px;
+
+	}
+
+	.DropObject{
+		position: absolute;
+		background-color: #ffffff;
+		width: 120px;
+		height: 35px;
+		text-align: center;
+		border: 1px solid #000;
+	}
+
+	.DragWaleObject{
+
+		position: relative;
+		display: inline-block;
+		background-image: linear-gradient(#296846, #094E29);
+		background-color: #296846;
+		width: 120px;
+		height: 35px;
+		text-align: center;
+		color: #fff;
+		line-height: 35px;
+		border: 1px solid #000;
+		font-family:    Arial, Helvetica, sans-serif;
+        font-size:      19px;
+        /*font-weight:    bold;*/
+
+        -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+		
+	}
+
+	.submitButton{
+		
+		background-image: linear-gradient(#0A55AC, #064083);
+		background-color: #0A55AC;
+		border-radius: 9px;
+		cursor: pointer;
+		color: white
+		font-family: "Helvetica";
+		font-weight: 100;
+		font-size: 20px;
+		padding: 5px;
+		text-decoration: none;
+		text-align: center;
+
+
+	}
+
+	.checkBtnLocation{
+		position: absolute;
+		width: 90px;
+			/*top:40%;*/
+		left: 74%;
+		font-family:    Arial, Helvetica, sans-serif;
+		color: white;
+		/*padding-bottom: 40px;*/
+	    bottom:2px;
+	    
+	}
+
+	.resetBtnLocation{
+		position: absolute;
+		width: 90px;
+		
+		left: 83%;
+		bottom:2px;
+		font-family:    Arial, Helvetica, sans-serif;
+		color: white;
+	}
+	
+	.submitButton:hover{
+		background-image: linear-gradient(#3486E4, #2974C9);
+		background-color: #3486E4;
+	}
+
+	.droppable_1{
+		top:47%; left: 10%;
+	}
+
+	.droppable_2{
+		top:19%; left: 10%;
+	}
+
+	.droppable_3{
+		top:33%; left: 10%;
+	}
+
+	.droppable_4{
+		top:57%; left: 82%;
+	}
+
+	.droppable_5{
+		top:12%; left: 82%;
+	}
+
+	.droppable_6{
+		top:25%; left: 82%;
+	}
+
+	.droppable_7{
+		top:36%; left: 82%;
+	}
+
+	.droppable_8{
+		top:70%; left: 82%;
+	}
+
+	.droppable_9{
+		top:81%; left: 82%;
+	}
+}
+
+
+@media screen and (max-width: 1024px) {
+	
+	body, html {
+	  height: 100%;
+	  margin: 0;
+	  overflow: hidden;
+	}
+	
+	.bg {
+	  /* The image used */
+	  background-image: url("bg.jpg");
+	  /* Full height */ 	
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+
+	.logo {
+	  /* The image used */
+	position: absolute;
+	top:1%;
+	left: 85%;
+	background: url("logo.png");
+  	background-repeat: no-repeat;
+ 	background-size: 140px 50px;
+	height: 70%;
+	width: 70%;
+	  /*background-size: cover;*/
+	}
+
+	.centered {
+
+	  position: absolute;
+
+	  -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+
+	  text-align: center;
+	  vertical-align: middle;
+	  top: 5%;
+	  left: 50%;
+	  width: 100%;
+	  transform: translate(-50%, -50%);
+	  font-size: 25px;
+	  font-style: normal;
+	  font-weight: bold;
+	  color: black;
+	  font-family: "Helvetica";
+
+	}
+	.optionBG{
+		position:absolute;
+	    width:100%;
+	    height:50px;
+	    /*background:#fff;*/
+	   /* padding-bottom: 55px;*/
+	    bottom:55px;
+	    text-align: center;
+	}
+	.DragObject{
+		position: relative;
+		display: inline-block;
+		background-color: #ccff7f;
+		width: 100px;
+		height: 35px;
+		text-align: center;
+		border: 1px solid #000;
+		line-height: 35px;
+
+	}
+
+	.DropObject{
+		position: absolute;
+		background-color: #ffffff;
+		width: 100px;
+		height: 35px;
+		text-align: center;
+		border: 1px solid #000;
+	}
+
+	.DragWaleObject{
+
+		position: relative;
+		display: inline-block;
+		background-image: linear-gradient(#296846, #094E29);
+		background-color: #296846;
+		width: 100px;
+		height: 35px;
+		text-align: center;
+		color: #fff;
+		line-height: 35px;
+		border: 1px solid #000;
+		font-family:    Arial, Helvetica, sans-serif;
+        font-size:      16px;
+        /*font-weight:    bold;*/
+
+        -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+		
+	}
+
+	.submitButton{
+		
+		background-image: linear-gradient(#0A55AC, #064083);
+		background-color: #0A55AC;
+		border-radius: 9px;
+		cursor: pointer;
+		color: white
+		font-family: "Helvetica";
+		font-weight: 100;
+		font-size: 18px;
+		padding: 10px;
+		text-decoration: none;
+		text-align: center;
+
+	}
+
+	.checkBtnLocation{
+		position: absolute;
+		width: 75px;
+			/*top:40%;*/
+		left: 72%;
+		font-family:    Arial, Helvetica, sans-serif;
+		color: white;
+		/*padding-bottom: 40px;*/
+	    bottom:10px;
+	    
+	}
+
+	.resetBtnLocation{
+		position: absolute;
+		width: 75px;
+		
+		left: 83%;
+		bottom:10px;
+		font-family:    Arial, Helvetica, sans-serif;
+		color: white;
+	}
+	
+	.submitButton:hover{
+		background-image: linear-gradient(#3486E4, #2974C9);
+		background-color: #3486E4;
+	}
+
+
+	.droppable_1{
+		top:47%; left: 5%;
+	}
+
+	.droppable_2{
+		top:22.5%; left: 5%;
+	}
+
+	.droppable_3{
+		top:35%; left: 5%;
+	}
+
+	.droppable_4{
+		top:55.5%; left: 82%;
+	}
+
+	.droppable_5{
+		top:17.5%; left: 82%;
+	}
+
+	.droppable_6{
+		top:28.5%; left: 82%;
+	}
+
+	.droppable_7{
+		top:38%; left: 82%;
+	}
+
+	.droppable_8{
+		top:66%; left: 82%;
+	}
+
+	.droppable_9{
+		top:75%; left: 82%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	
+	body, html {
+	  height: 100%;
+	  margin: 0;
+	  overflow: hidden;
+	}
+	
+	.bg {
+	  /* The image used */
+	  background-image: url("bg.jpg");
+	  /* Full height */ 	
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+
+	.logo {
+	  /* The image used */
+	position: absolute;
+	top:1%;
+	left: 85%;
+	background: url("logo.png");
+  	background-repeat: no-repeat;
+ 	background-size: 140px 50px;
+	height: 70%;
+	width: 70%;
+	  /*background-size: cover;*/
+	}
+
+	.centered {
+
+	  position: absolute;
+
+	  -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+
+	  text-align: center;
+	  vertical-align: middle;
+	  top: 5%;
+	  left: 50%;
+	  width: 100%;
+	  transform: translate(-50%, -50%);
+	  font-size: 25px;
+	  font-style: normal;
+	  font-weight: bold;
+	  color: black;
+	  font-family: "Helvetica";
+
+	}
+	.optionBG{
+		position:absolute;
+	    width:100%;
+	    height:50px;
+	    /*background:#fff;*/
+	   /* padding-bottom: 55px;*/
+	    bottom:30px;
+	    text-align: center;
+	}
+	.DragObject{
+		position: relative;
+		display: inline-block;
+		background-color: #ccff7f;
+		width: 80px;
+		height: 35px;
+		text-align: center;
+		border: 1px solid #000;
+		line-height: 35px;
+
+	}
+
+	.DropObject{
+		position: absolute;
+		background-color: #ffffff;
+		width: 80px;
+		height: 35px;
+		text-align: center;
+		border: 1px solid #000;
+	}
+
+	.DragWaleObject{
+
+		position: relative;
+		display: inline-block;
+		background-image: linear-gradient(#296846, #094E29);
+		background-color: #296846;
+		width: 82px;
+		height: 35px;
+		text-align: center;
+		color: #fff;
+		line-height: 35px;
+		border: 1px solid #000;
+		font-family:    Arial, Helvetica, sans-serif;
+        font-size:      14px;
+        /*font-weight:    bold;*/
+
+        -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+		
+	}
+
+	.submitButton{
+		
+		background-image: linear-gradient(#0A55AC, #064083);
+		background-color: #0A55AC;
+		border-radius: 9px;
+		cursor: pointer;
+		color: white
+		font-family: "Helvetica";
+		font-weight: 100;
+		font-size: 16px;
+		padding: 6px;
+		text-decoration: none;
+		text-align: center;
+
+	}
+
+	.checkBtnLocation{
+		position: absolute;
+		width: 75px;
+			/*top:40%;*/
+		left: 72%;
+		font-family:    Arial, Helvetica, sans-serif;
+		color: white;
+		/*padding-bottom: 40px;*/
+	    bottom:5px;
+	    
+	}
+
+	.resetBtnLocation{
+		position: absolute;
+		width: 75px;
+		
+		left: 83%;
+		bottom:5px;
+		font-family:    Arial, Helvetica, sans-serif;
+		color: white;
+	}
+	
+	.submitButton:hover{
+		background-image: linear-gradient(#3486E4, #2974C9);
+		background-color: #3486E4;
+	}
+
+
+	.droppable_1{
+		top:46%; left: 5%;
+	}
+
+	.droppable_2{
+		top:23%; left: 5%;
+	}
+
+	.droppable_3{
+		top:34%; left: 5%;
+	}
+
+	.droppable_4{
+		top:55%; left: 82%;
+	}
+
+	.droppable_5{
+		top:17%; left: 82%;
+	}
+
+	.droppable_6{
+		top:27%; left: 82%;
+	}
+
+	.droppable_7{
+		top:37%; left: 82%;
+	}
+
+	.droppable_8{
+		top:65%; left: 82%;
+	}
+
+	.droppable_9{
+		top:75%; left: 82%;
+	}
+}
+	
+
+</style>
+</head>
+<body>
+<div class="centered">Drag the words and drop them in their appropriate boxes</div>
+
+<div class="logo"></div>
+
+<div id="checkBtn" onclick="checkFunction()" class="submitButton checkBtnLocation">Check</div>
+<!-- <div id="helpBtn" onclick="helpFunction()" class="submitButton helpBtnLocation">Help</div> -->
+<div id="resetBtn" onclick="refreshFunction()" class="submitButton resetBtnLocation">Reset</div>
+
+
+
+<div class="dropZone">
+	<!-- <div id="yes-drop" class="DragObject">zsdfsdfd</div> -->
+	<div id="droppable_1"  class="DropObject droppable_1"></div>
+	<div id="droppable_2"  class="DropObject droppable_2"></div>
+	<div id="droppable_3"  class="DropObject droppable_3"></div>
+	<div id="droppable_4"  class="DropObject droppable_4"></div>
+	<div id="droppable_5"  class="DropObject droppable_5"></div>
+	<div id="droppable_6"  class="DropObject droppable_6"></div>
+	<div id="droppable_7"  class="DropObject droppable_7"></div>
+	<div id="droppable_8"  class="DropObject droppable_8"></div>
+	<div id="droppable_9"  class="DropObject droppable_9"></div>
+	
+</div>
+
+
+
+<!-- <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="img_w3slogo.gif" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+</div> -->
+<div class="optionBG">
+	<!-- <div id="yes-drop" class="DragObject">zsdfsdfd</div> -->
+	<!-- <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" class="DragObject">
+		<div id="draggable" width="88" height="31" class="DragWaleObject">Transformer</div>
+	</div> -->
+
+	<div id="draggable_7" width="88" height="31" class="DragWaleObject">Transformer</div>
+	<div id="draggable_1" width="88" height="31" class="DragWaleObject">Reservoir</div>
+	<div id="draggable_9" width="88" height="31" class="DragWaleObject">Outlet</div>
+	<div id="draggable_6" width="88" height="31" class="DragWaleObject">Electric Pole</div>
+	<div id="draggable_4" width="88" height="31" class="DragWaleObject">Turbine</div>
+	<div id="draggable_3" width="88" height="31" class="DragWaleObject">Penstock</div>
+	<div id="draggable_2" width="88" height="31" class="DragWaleObject">Control Gate</div>
+	<div id="draggable_8" width="88" height="31" class="DragWaleObject">River</div>
+	<div id="draggable_5" width="88" height="31" class="DragWaleObject">Power Line</div>
+
+	<!-- <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" class="DragObject">
+		<div draggable="true" ondragstart="drag(event)" id="drag2" width="88" height="31" class="DragWaleObject" >Reservoir</div>
+	</div> -->
+
+
+
+</div>
+
+
+
+<!-- <a href="#" class="submitButton">Submit</a> -->
+<div class="bg"></div>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+
+	var arr = new Array(0,0,0,0,0,0,0,0,0);
+	function checkFunction(){
+
+
+		//console.log(arr);
+		for (var i = 0; i < arr.length; i++) {
+    		//alert(myStringArray[i]);
+    		//console.log(i);
+    		var temp= "draggable_" + (i+1);
+    		var dom = document.getElementById(temp);
+    		//console.log(temp);
+    		if(arr[i] == 1){
+    			//document.getElementById(temp).style.backgroundColor = "green";
+    			dom.style.background =  'linear-gradient(#338E39, #29682D)';
+    			//document.getElementById(temp).style.background-image: linear-gradient
+
+    			/*background-image: linear-gradient(#296846, #094E29);
+				background-color: #296846;*/
+
+				
+
+    			/*var el = document.getElementById(temp);
+				el.style.color = "white";
+				el.style.backgroundColor = "green";*/
+    		}
+    		else{
+    		//document.getElementById(temp).style.backgroundColor = "#E20B0B";
+    		//document.getElementById(temp).style.background-image: linear-gradient(#296846, #094E29);
+    		dom.style.background =  'linear-gradient(#E20B0B, #B60808)';
+    		}
+		}
+	}
+/*function changeElement(id) {
+  var el = document.getElementById(id);
+  el.style.color = "red";
+  el.style.fontSize = "15px";
+  el.style.backgroundColor = "#FFFFFF";
+}*/
+
+function helpFunction(){
+
+	$( function() {
+	var destination = $("#droppable_1").offset();
+	$("#draggable_1").css({top: destination.top, left: destination.left});
+
+});
+
+}
+
+function refreshFunction(){
+	location.reload();
+}
+
+  $( function() {
+
+
+
+    $("#draggable_1, #draggable-nonvalid").draggable({ revert: "invalid" , zIndex:100});
+    $("#draggable_2, #draggable-nonvalid").draggable({ revert: "invalid" , zIndex:100});
+    $("#draggable_3, #draggable-nonvalid").draggable({ revert: "invalid" , zIndex:100});
+    $("#draggable_4, #draggable-nonvalid").draggable({ revert: "invalid" , zIndex:100});
+    $("#draggable_5, #draggable-nonvalid").draggable({ revert: "invalid" , zIndex:100});
+    $("#draggable_6, #draggable-nonvalid").draggable({ revert: "invalid" , zIndex:100});
+    $("#draggable_7, #draggable-nonvalid").draggable({ revert: "invalid" , zIndex:100});
+    $("#draggable_8, #draggable-nonvalid").draggable({ revert: "invalid" , zIndex:100});
+    $("#draggable_9, #draggable-nonvalid").draggable({ revert: "invalid" , zIndex:100});
+    
+    
+
+
+    $("#droppable_1").droppable( { drop: dropAnimate});
+    $("#droppable_2").droppable( { drop: dropAnimate});
+    $("#droppable_3").droppable( { drop: dropAnimate});
+    $("#droppable_4").droppable( { drop: dropAnimate});
+    $("#droppable_5").droppable( { drop: dropAnimate});
+    $("#droppable_6").droppable( { drop: dropAnimate});
+    $("#droppable_7").droppable( { drop: dropAnimate});
+    $("#droppable_8").droppable( { drop: dropAnimate});
+    $("#droppable_9").droppable( { drop: dropAnimate});
+
+
+function dropAnimate(event, ui) {
+
+
+      
+
+    var ret = $(ui.draggable).attr('id').split("_");
+	var str = ret[1];
+
+	var ret2 = $(this).attr('id').split("_");
+	var str2 = ret2[1];
+
+	if(str == str2)
+	{
+		//console.log("the answer is correct");
+
+		arr[str-1]=1;
+	}
+	else
+	{
+		//console.log("wrong");
+		arr[str-1]=0;
+	}
+
+
+
+
+	// to disable droppable 
+    $(this).droppable("disable");
+
+    /*if()*/
+
+    /*disabled: false,*/
+    
+
+    var $this = $(this);
+    var width = $this.width();
+    var height = $this.height();
+    var cntrLeft = (width / 2) - (ui.draggable.width() / 2);
+    var cntrTop = (height / 2) - (ui.draggable.height() / 2);
+
+    ui.draggable.position({
+      my: "center",
+      at: "center",
+      of: $this,
+      using: function(pos) {
+        $(this).animate(pos, "fast", "linear");
+      }
+
+    });
+
+    $(this).droppable({
+
+	    drop: function(event, ui) {
+	    	console.log("drop");
+	    	console.log($(this).attr("id"));
+	         //$(this).droppable("disabled", true);
+	         $(this).droppable("disable"); 
+	    },
+
+	    out: function () {
+	    	console.log("out");
+	    	console.log($(this).attr("id"));
+	        //$(this).droppable("disabled", false);
+	        $(this).droppable("enable"); 
+	    }
+    });
+
+    
+    // to disable drag element for other place
+   ui.draggable.draggable({disabled: true});
+  }
+
+
+
+
+    
+  } );
+  </script>
+</body>
+</html>

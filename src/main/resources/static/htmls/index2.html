@@ -1,0 +1,5083 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Source of Energy</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<!-- <link rel="stylesheet" href="range-slider.css"> -->
+	<style>
+	body, html {
+	  height: 100%;
+	  margin: 0;
+	  overflow: hidden;
+	}
+
+/*	Head Height
+
+	Efficiency of Plant*/
+
+/*	--------------------------------------------------start popup------------------------------------------------------
+*/
+@media screen 
+  and (min-width: 1601px)  
+  and (max-width: 1920px) { 
+  	body {font-family: Arial, Helvetica, sans-serif;}
+
+.hover_bkgr_fricc_exceed{
+	 background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc_exceed .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc_exceed > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+
+.hover_bkgr_fricc_meet{
+	 background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:bottom;
+    top:0;
+    width:0%;  /*Removing the width to hide the specifications display*/
+    z-index:10000;
+}
+.hover_bkgr_fricc_meet .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc_meet > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: bottom;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+
+.hover_bkgr_fricc_SpecNotMet{
+	 background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc_SpecNotMet .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc_SpecNotMet > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+
+.hover_bkgr_fricc{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+
+/*--------------------------------------------end popup----------------------------------------------------------------------*/
+
+	.bg {
+	  /* The image used */
+	  background-image: url("images/waterFlow_1.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	.bg2 {
+	  /* The image used */
+	  background-image: url("images/waterFlow_2.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	.bg3 {
+	  /* The image used */
+	  background-image: url("images/waterFlow_3.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	.bg4 {
+	  /* The image used */
+	  background-image: url("images/waterFlow_4.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	.bg5 {
+	  /* The image used */
+	  background-image: url("images/waterFlow_5.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+
+
+	.wf_1{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_2{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_3{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_4{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_5{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_6{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_7{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_8{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_9{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_10{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_11{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_12{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_13{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_14{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_15{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_16{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_17{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10017.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+
+
+
+	.wf2_1{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_2{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_3{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_4{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_5{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_6{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_7{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_8{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_9{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_10{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_11{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_12{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_13{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_14{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_15{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_16{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+
+
+
+	.wf3_1{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_2{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_3{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_4{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_5{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_6{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_7{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_8{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_9{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_10{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_11{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_12{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_13{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_14{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_15{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_16{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_17{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30017.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+
+
+	.wf4_1{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_2{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_3{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_4{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_5{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_6{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_7{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_8{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_9{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_10{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_11{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_12{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_13{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_14{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_15{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_16{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_17{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40017.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+
+
+
+	.wf5_1{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_2{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_3{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_4{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_5{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_6{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_7{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_8{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_9{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_10{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_11{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_12{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_13{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_14{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_15{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_16{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_17{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50017.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+	.centered {
+
+		background-image: linear-gradient(#3e9b68, #296846);
+		background-color: #3e9b68;
+		border-radius: 9px;
+		color: white;
+		font-family: "Helvetica";
+		font-weight: 100;
+		font-size: 20px;
+		padding: 10px;
+		text-decoration: none;
+		text-align: center;
+		/*width: 25%;*/
+
+		-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+
+	  position: absolute;
+	  top: 5%;
+	  left: 20%;
+	  transform: translate(-50%, -50%);
+	  font-size: 25px;
+	  font-style: normal;
+	  /*font-weight: bold;
+	  font-family: arial;*/
+
+	}
+
+/*.slidecontainer {
+
+	position: absolute;
+	top: 10%;
+	left: 18%;
+  	width: 20%;
+
+
+}*/
+
+.slidecontainer2 {
+	position: absolute;
+	top: 28%;
+	left: 69%;
+  width: 20%;
+
+}
+
+div.slidecontainer2 p{
+	position: relative;
+	text-align: left;
+	top: 48px;
+	left: 110%;
+	width: 19%;
+}
+
+div.slidecontainer2 span{
+	position: relative;
+	top: 63px;
+	color: white;
+	height: 50px;
+}
+
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+div.slidecontainer3 p{
+	position: relative;
+	text-align: left;
+	top: 48px;
+	left: 110%;
+	width: 15%;
+}
+
+div.slidecontainer3 span{
+	position: relative;
+	color: white;
+	top: 63px;
+}
+
+.slidecontainer3 {
+	position: absolute;
+	top: 38%;
+	left: 69%;
+  	width: 20%;
+  	height: 5px;
+}
+
+.rotateSlider{
+	/*transform: rotate(270deg);*/
+
+}
+
+
+#demo2{
+	background-color: white;
+	font-size: 20px;
+	padding: 2px;
+}
+#demo3{
+
+	background-color: white;
+	font-size: 20px;
+	padding: 2px;
+}
+
+.resetButton{
+	position: absolute;
+	top: 89%;
+	text-align: center;
+	width: 100px;
+	left: 74%;
+}
+
+.startButton{
+	position: absolute;
+	top: 89%;
+	text-align: center;
+	width: 100px;
+	left: 69%;
+
+}
+
+.calcStartButton{
+
+	width: 60%;
+}
+
+.darkHouses{
+	position: absolute;
+	top:-7%;
+	left: 70%;
+	background: url("images/darkHome.png");
+  	background-repeat: no-repeat;
+ 	background-size: 500px 250px;
+	height: 350px;
+	width: 650px;
+
+
+
+}
+
+.instruction_iconID{
+	position: absolute;
+	background: url("images/instruction_icon.png");
+	background-repeat: no-repeat;
+ 	background-size: 55px 55px;
+	height: 100px;
+	width: 100px;
+	top:1%;
+	left: 4%;
+	cursor: pointer;
+}
+
+#instructionBG{
+	position: absolute;
+	width: 36%;
+	height: 54%;
+	padding: 50px 0;
+	text-align: center;
+	background-color: black;
+	margin-top: 80px;
+	margin-left: 80px;
+	opacity: 0.7;
+}
+
+#instructionDATA{
+	position: absolute;
+	width: 33%;
+	height: 40%;
+	/*padding: 50px 0;*/
+	text-align: left;
+	margin-top: 85px;
+	margin-left: 97px;
+	color: white;
+	font-size: 19px;
+	line-height: 1.4;
+
+}
+
+
+
+[class*='close-'] {
+  color: #777;
+  font: 14px/100% arial, sans-serif;
+  position: absolute;
+  right: 5px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  top: 5px;
+}
+
+.close-classic:after {
+  content: 'X'; /* ANSI X letter */
+}
+
+.glowHouses{
+	position: absolute;
+	top:-7%;
+	left: 70%;
+	background: url("images/glowHome.png");
+  	background-repeat: no-repeat;
+ 	background-size: 500px 250px;
+	height: 350px;
+	width: 650px;
+
+}
+
+.rotatingTurbine{
+	position: absolute;
+
+	top:67.5%;
+	left:51%;
+	/*background-size: 500px 700px;*/
+	/*height: 500px;
+	width: 700px;*/
+}
+.rotatingTurbingSize{
+	height: 500px;
+	width: 700px;
+}
+
+.submitButton{
+		background-image: linear-gradient(#3e9b68, #296846);
+		background-color: #3e9b68;
+		border-radius: 9px;
+		cursor: pointer;
+		color: white;
+		font-family: "Helvetica";
+		font-weight: 100;
+		font-size: 20px;
+		padding: 8px;
+		text-decoration: none;
+		text-align: center;
+	}
+
+
+.submitButton:hover{
+		background-image: linear-gradient(#44dd88, #2eb489);
+		background-color: #44dd88;
+	}
+
+	.inputFrmKidBG{
+		position: absolute;
+		opacity: 0.7;
+		background-color: black;
+		padding: 18% 15.5%;
+		top:30%;
+		left:68%;
+	}
+	.inputFrmKid{
+		position: absolute;
+		color: white;
+		top:32%;
+		left:69%;
+
+	}
+
+	.forDescription{
+	 position: absolute;
+	 height: 50%;
+	 width: 50%;
+	 top:25%;
+	 left: 25%
+	 opacity: 0.5;
+	 background: black;
+
+	}
+
+	h3.fortext{
+		/*opacity: 0.5;*/
+		position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  /*width: 10%;*/
+	  color: blue;
+
+
+	}
+
+	.generatorIMG{
+		position: absolute;
+	top:32%;
+	left: 48.5%;
+	background: url("images/generator.png");
+  	background-repeat: no-repeat;
+ 	background-size: 260px 405px;
+	height: 357px;
+	width: 230px;
+	}
+
+	.briefDescription{
+		position: absolute;
+		top:57%;
+		left: 69.2%;
+		font-size: 21px;
+		color: white;
+
+	}
+
+	div.briefDescription p{
+		  display: block;
+		  margin-top: 0.4em;
+		  margin-bottom: 0em;
+		  margin-left: 0em;
+		  margin-right: 0em;
+	}
+
+	.logo {
+	  /* The image used */
+	position: absolute;
+	top:90%;
+	left:2%;
+	background: url("images/logo.png");
+  	background-repeat: no-repeat;
+ 	background-size: 150px 60px;
+	height: 70%;
+	width: 30%;
+	  /*background-size: cover;*/
+	}
+
+}
+
+
+
+@media screen 
+  and (min-width: 1025px)  
+  and (max-width: 1600px) { 
+  	body {font-family: Arial, Helvetica, sans-serif;}
+
+.hover_bkgr_fricc_exceed{
+	 background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc_exceed .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc_exceed > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+
+.hover_bkgr_fricc_meet{
+	 background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:bottom;
+    top:0;
+    width:0%;  /*Removing the width to hide the specifications display*/
+    z-index:10000;
+}
+.hover_bkgr_fricc_meet .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc_meet > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: bottom;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+
+.hover_bkgr_fricc_SpecNotMet{
+	 background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc_SpecNotMet .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc_SpecNotMet > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+
+.hover_bkgr_fricc{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+
+/*--------------------------------------------end popup----------------------------------------------------------------------*/
+
+	.bg {
+	  /* The image used */
+	  background-image: url("images/waterFlow_1.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	.bg2 {
+	  /* The image used */
+	  background-image: url("images/waterFlow_2.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	.bg3 {
+	  /* The image used */
+	  background-image: url("images/waterFlow_3.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	.bg4 {
+	  /* The image used */
+	  background-image: url("images/waterFlow_4.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	.bg5 {
+	  /* The image used */
+	  background-image: url("images/waterFlow_5.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+
+
+	.wf_1{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_2{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_3{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_4{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_5{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_6{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_7{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_8{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_9{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_10{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_11{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_12{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_13{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_14{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_15{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_16{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_17{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10017.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+
+
+
+	.wf2_1{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_2{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_3{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_4{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_5{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_6{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_7{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_8{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_9{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_10{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_11{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_12{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_13{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_14{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_15{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_16{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+
+
+
+	.wf3_1{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_2{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_3{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_4{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_5{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_6{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_7{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_8{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_9{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_10{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_11{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_12{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_13{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_14{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_15{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_16{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_17{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30017.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+
+
+	.wf4_1{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_2{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_3{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_4{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_5{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_6{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_7{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_8{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_9{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_10{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_11{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_12{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_13{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_14{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_15{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_16{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_17{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40017.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+
+
+
+	.wf5_1{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_2{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_3{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_4{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_5{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_6{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_7{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_8{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_9{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_10{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_11{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_12{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_13{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_14{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_15{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_16{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_17{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50017.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+	.centered {
+
+		background-image: linear-gradient(#3e9b68, #296846);
+		background-color: #3e9b68;
+		border-radius: 9px;
+		color: white;
+		font-family: "Helvetica";
+		font-weight: 100;
+		font-size: 20px;
+		padding: 10px;
+		text-decoration: none;
+		text-align: center;
+		/*width: 25%;*/
+
+		-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+
+	  position: absolute;
+	  top: 5%;
+	  left: 20%;
+	  transform: translate(-50%, -50%);
+	  font-size: 25px;
+	  font-style: normal;
+	  /*font-weight: bold;
+	  font-family: arial;*/
+
+	}
+
+/*.slidecontainer {
+
+	position: absolute;
+	top: 10%;
+	left: 18%;
+  	width: 20%;
+
+
+}*/
+
+.slidecontainer2 {
+	position: absolute;
+	top: 28%;
+	left: 69%;
+  width: 20%;
+
+}
+
+div.slidecontainer2 p{
+	position: relative;
+	text-align: left;
+	top: 48px;
+	left: 110%;
+	width: 19%;
+}
+
+div.slidecontainer2 span{
+	position: relative;
+	top: 63px;
+	color: white;
+	height: 50px;
+}
+
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+div.slidecontainer3 p{
+	position: relative;
+	text-align: left;
+	top: 48px;
+	left: 110%;
+	width: 15%;
+}
+
+div.slidecontainer3 span{
+	position: relative;
+	color: white;
+	top: 63px;
+}
+
+.slidecontainer3 {
+	position: absolute;
+	top: 38%;
+	left: 69%;
+  	width: 20%;
+  	height: 5px;
+}
+
+.rotateSlider{
+	/*transform: rotate(270deg);*/
+
+}
+
+
+#demo2{
+	background-color: white;
+	font-size: 20px;
+	padding: 2px;
+}
+#demo3{
+
+	background-color: white;
+	font-size: 20px;
+	padding: 2px;
+}
+
+.resetButton{
+	position: absolute;
+	top: 89%;
+	text-align: center;
+	width: 100px;
+	left: 74%;
+}
+
+.startButton{
+	position: absolute;
+	top: 89%;
+	text-align: center;
+	width: 100px;
+	left: 69%;
+
+}
+
+.calcStartButton{
+
+	width: 60%;
+}
+
+.darkHouses{
+	position: absolute;
+	top:-7%;
+	left: 70%;
+	background: url("images/darkHome.png");
+  	background-repeat: no-repeat;
+ 	background-size: 500px 250px;
+	height: 350px;
+	width: 650px;
+
+
+
+}
+
+.instruction_iconID{
+	position: absolute;
+	background: url("images/instruction_icon.png");
+	background-repeat: no-repeat;
+ 	background-size: 55px 55px;
+	height: 100px;
+	width: 100px;
+	top:1%;
+	left: 4%;
+	cursor: pointer;
+}
+
+#instructionBG{
+	position: absolute;
+	width: 36%;
+	height: 54%;
+	padding: 50px 0;
+	text-align: center;
+	background-color: black;
+	margin-top: 80px;
+	margin-left: 80px;
+	opacity: 0.7;
+}
+
+#instructionDATA{
+	position: absolute;
+	width: 33%;
+	height: 40%;
+	/*padding: 50px 0;*/
+	text-align: left;
+	margin-top: 85px;
+	margin-left: 97px;
+	color: white;
+	font-size: 19px;
+	line-height: 1.4;
+
+}
+
+
+
+[class*='close-'] {
+  color: #777;
+  font: 14px/100% arial, sans-serif;
+  position: absolute;
+  right: 5px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  top: 5px;
+}
+
+.close-classic:after {
+  content: 'X'; /* ANSI X letter */
+}
+
+.glowHouses{
+	position: absolute;
+	top:-7%;
+	left: 70%;
+	background: url("images/glowHome.png");
+  	background-repeat: no-repeat;
+ 	background-size: 500px 250px;
+	height: 350px;
+	width: 650px;
+
+}
+
+.rotatingTurbine{
+	position: absolute;
+	top:69.5%;
+	left:50.6%;
+	/*background-size: 500px 700px;*/
+	/*height: 500px;
+	width: 700px;*/
+}
+.rotatingTurbingSize{
+	height: 500px;
+	width: 700px;
+}
+
+.submitButton{
+		background-image: linear-gradient(#3e9b68, #296846);
+		background-color: #3e9b68;
+		border-radius: 9px;
+		cursor: pointer;
+		color: white;
+		font-family: "Helvetica";
+		font-weight: 100;
+		font-size: 20px;
+		padding: 8px;
+		text-decoration: none;
+		text-align: center;
+	}
+
+
+.submitButton:hover{
+		background-image: linear-gradient(#44dd88, #2eb489);
+		background-color: #44dd88;
+	}
+
+	.inputFrmKidBG{
+		position: absolute;
+		opacity: 0.7;
+		background-color: black;
+		padding: 18% 15.5%;
+		top:30%;
+		left:68%;
+	}
+	.inputFrmKid{
+		position: absolute;
+		color: white;
+		top:32%;
+		left:69%;
+
+	}
+
+	.forDescription{
+	 position: absolute;
+	 height: 50%;
+	 width: 50%;
+	 top:25%;
+	 left: 25%
+	 opacity: 0.5;
+	 background: black;
+
+	}
+
+	h3.fortext{
+		/*opacity: 0.5;*/
+		position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  /*width: 10%;*/
+	  color: blue;
+
+
+	}
+
+	.generatorIMG{
+		position: absolute;
+	top:31%;
+	left: 47.6%;
+	background: url("images/generator.png");
+  	background-repeat: no-repeat;
+ 	background-size: 230px 305px;
+	height: 305px;
+	width: 230px;
+	}
+
+	.briefDescription{
+		position: absolute;
+		top:57%;
+		left: 69.2%;
+		font-size: 21px;
+		color: white;
+
+	}
+
+	div.briefDescription p{
+		  display: block;
+		  margin-top: 0.4em;
+		  margin-bottom: 0em;
+		  margin-left: 0em;
+		  margin-right: 0em;
+	}
+
+	.logo {
+	  /* The image used */
+	position: absolute;
+	top:90%;
+	left:2%;
+	background: url("images/logo.png");
+  	background-repeat: no-repeat;
+ 	background-size: 150px 60px;
+	height: 70%;
+	width: 30%;
+	  /*background-size: cover;*/
+	}
+
+}
+
+@media screen 
+  and (max-width: 1024px)
+  and (min-width: 769px)  { 
+  	body {font-family: Arial, Helvetica, sans-serif;}
+
+.hover_bkgr_fricc_exceed{
+	 background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc_exceed .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc_exceed > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+
+.hover_bkgr_fricc_meet{
+	 background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:bottom;
+    top:0;
+    width:0%;  /*Removing the width to hide the specifications display*/
+    z-index:10000;
+}
+.hover_bkgr_fricc_meet .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc_meet > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: bottom;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+
+.hover_bkgr_fricc_SpecNotMet{
+	 background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc_SpecNotMet .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc_SpecNotMet > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+
+.hover_bkgr_fricc{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+
+/*--------------------------------------------end popup----------------------------------------------------------------------*/
+
+	.bg {
+	  /* The image used */
+	  background-image: url("images/waterFlow_1.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	.bg2 {
+	  /* The image used */
+	  background-image: url("images/waterFlow_2.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	.bg3 {
+	  /* The image used */
+	  background-image: url("images/waterFlow_3.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	.bg4 {
+	  /* The image used */
+	  background-image: url("images/waterFlow_4.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	.bg5 {
+	  /* The image used */
+	  background-image: url("images/waterFlow_5.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+
+
+	.wf_1{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_2{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_3{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_4{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_5{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_6{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_7{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_8{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_9{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_10{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_11{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_12{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_13{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_14{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_15{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_16{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_17{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10017.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+
+
+
+	.wf2_1{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_2{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_3{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_4{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_5{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_6{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_7{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_8{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_9{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_10{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_11{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_12{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_13{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_14{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_15{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_16{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+
+
+
+	.wf3_1{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_2{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_3{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_4{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_5{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_6{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_7{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_8{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_9{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_10{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_11{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_12{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_13{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_14{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_15{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_16{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_17{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30017.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+
+
+	.wf4_1{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_2{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_3{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_4{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_5{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_6{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_7{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_8{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_9{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_10{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_11{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_12{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_13{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_14{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_15{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_16{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_17{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40017.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+
+
+
+	.wf5_1{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_2{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_3{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_4{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_5{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_6{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_7{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_8{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_9{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_10{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_11{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_12{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_13{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_14{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_15{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_16{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_17{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50017.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+	.centered {
+
+		background-image: linear-gradient(#3e9b68, #296846);
+		background-color: #3e9b68;
+		border-radius: 9px;
+		color: white;
+		font-family: "Helvetica";
+		font-weight: 100;
+		font-size: 20px;
+		padding: 10px;
+		text-decoration: none;
+		text-align: center;
+		/*width: 25%;*/
+
+		-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+
+	  position: absolute;
+	  top: 5%;
+	  left: 20%;
+	  transform: translate(-50%, -50%);
+	  font-size: 25px;
+	  font-style: normal;
+	  /*font-weight: bold;
+	  font-family: arial;*/
+
+	}
+
+/*.slidecontainer {
+
+	position: absolute;
+	top: 10%;
+	left: 18%;
+  	width: 20%;
+
+
+}*/
+
+.slidecontainer2 {
+	position: absolute;
+	top: 38%;
+	left: 70%;
+  width: 20%;
+
+}
+
+div.slidecontainer2 p{
+	position: relative;
+	text-align: left;
+	top: 48px;
+	left: 110%;
+	width: 19%;
+}
+
+div.slidecontainer2 span{
+	position: relative;
+	top: 63px;
+	color: white;
+	height: 50px;
+}
+
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+div.slidecontainer3 p{
+	position: relative;
+	text-align: left;
+	top: 48px;
+	left: 110%;
+	width: 15%;
+}
+
+div.slidecontainer3 span{
+	position: relative;
+	color: white;
+	top: 63px;
+}
+
+.slidecontainer3 {
+	position: absolute;
+	top: 47%;
+	left: 70%;
+  	width: 20%;
+  	height: 5px;
+}
+
+.rotateSlider{
+	/*transform: rotate(270deg);*/
+
+}
+
+
+#demo2{
+	background-color: white;
+	font-size: 20px;
+	padding: 2px;
+}
+#demo3{
+
+	background-color: white;
+	font-size: 20px;
+	padding: 2px;
+}
+
+.resetButton{
+	position: absolute;
+	top: 89%;
+	text-align: center;
+	width: 100px;
+	left: 70%;
+}
+
+.startButton{
+	position: absolute;
+	top: 89%;
+	text-align: center;
+	width: 100px;
+	left: 70%;
+
+}
+
+.calcStartButton{
+
+	width: 60%;
+}
+
+.darkHouses{
+	position: absolute;
+	top:-7%;
+	left: 70%;
+	background: url("images/darkHome.png");
+  	background-repeat: no-repeat;
+ 	background-size: 500px 250px;
+	height: 350px;
+	width: 650px;
+
+
+
+}
+
+.instruction_iconID{
+	position: absolute;
+	background: url("images/instruction_icon.png");
+	background-repeat: no-repeat;
+ 	background-size: 55px 55px;
+	height: 100px;
+	width: 100px;
+	top:1%;
+	left: 4%;
+	cursor: pointer;
+}
+
+#instructionBG{
+	position: absolute;
+	width: 36%;
+	height: 54%;
+	padding: 50px 0;
+	text-align: center;
+	background-color: black;
+	margin-top: 80px;
+	margin-left: 80px;
+	opacity: 0.7;
+}
+
+#instructionDATA{
+	position: absolute;
+	width: 33%;
+	height: 40%;
+	/*padding: 50px 0;*/
+	text-align: left;
+	margin-top: 85px;
+	margin-left: 97px;
+	color: white;
+	font-size: 19px;
+	line-height: 1.4;
+
+}
+
+
+
+[class*='close-'] {
+  color: #777;
+  font: 14px/100% arial, sans-serif;
+  position: absolute;
+  right: 5px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  top: 5px;
+}
+
+.close-classic:after {
+  content: 'X'; /* ANSI X letter */
+}
+
+.glowHouses{
+	position: absolute;
+	top:-7%;
+	left: 70%;
+	background: url("images/glowHome.png");
+  	background-repeat: no-repeat;
+ 	background-size: 500px 250px;
+	height: 350px;
+	width: 650px;
+
+}
+
+.rotatingTurbine{
+	position: absolute;
+
+	top:66.5%;
+	left:49.6%;
+	/*background-size: 500px 700px;*/
+	/*height: 500px;
+	width: 700px;*/
+}
+.rotatingTurbingSize{
+	height: 500px;
+	width: 700px;
+}
+
+.submitButton{
+		background-image: linear-gradient(#3e9b68, #296846);
+		background-color: #3e9b68;
+		border-radius: 9px;
+		cursor: pointer;
+		color: white;
+		font-family: "Helvetica";
+		font-weight: 100;
+		font-size: 20px;
+		padding: 8px;
+		text-decoration: none;
+		text-align: center;
+	}
+
+
+.submitButton:hover{
+		background-image: linear-gradient(#44dd88, #2eb489);
+		background-color: #44dd88;
+	}
+
+	.inputFrmKidBG{
+		position: absolute;
+		opacity: 0.7;
+		background-color: black;
+		padding: 19% 15.5%;
+		top:40%;
+		left:69%;
+	}
+	.inputFrmKid{
+		position: absolute;
+		color: white;
+		top:43%;
+		left:70%;
+
+	}
+
+	.forDescription{
+	 position: absolute;
+	 height: 50%;
+	 width: 50%;
+	 top:25%;
+	 left: 25%
+	 opacity: 0.5;
+	 background: black;
+
+	}
+
+	h3.fortext{
+		/*opacity: 0.5;*/
+		position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  /*width: 10%;*/
+	  color: blue;
+
+
+	}
+
+	.generatorIMG{
+		position: absolute;
+	top:33%;
+	left: 48%;
+	background: url("images/generator.png");
+  	background-repeat: no-repeat;
+ 	background-size: 190px 293px;
+	height: 276px;
+	width: 219px;
+	}
+
+	.briefDescription{
+		position: absolute;
+		top:65%;
+		left: 70%;
+		font-size: 16px;
+		color: white;
+
+	}
+
+	div.briefDescription p{
+		  display: block;
+		  margin-top: 0.4em;
+		  margin-bottom: 0em;
+		  margin-left: 0em;
+		  margin-right: 0em;
+	}
+
+	.logo {
+	  /* The image used */
+	position: absolute;
+	top:90%;
+	left:2%;
+	background: url("images/logo.png");
+  	background-repeat: no-repeat;
+ 	background-size: 150px 60px;
+	height: 70%;
+	width: 30%;
+	  /*background-size: cover;*/
+	}
+
+}
+
+@media screen 
+  and (max-width: 768px)
+  and (min-width: 415px)  { 
+  	body {font-family: Arial, Helvetica, sans-serif;}
+
+.hover_bkgr_fricc_exceed{
+	 background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc_exceed .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc_exceed > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+
+.hover_bkgr_fricc_meet{
+	 background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:bottom;
+    top:0;
+    width:0%;  /*Removing the width to hide the specifications display*/
+    z-index:10000;
+}
+.hover_bkgr_fricc_meet .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc_meet > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: bottom;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+
+.hover_bkgr_fricc_SpecNotMet{
+	 background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc_SpecNotMet .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc_SpecNotMet > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+
+.hover_bkgr_fricc{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+
+/*--------------------------------------------end popup----------------------------------------------------------------------*/
+
+	.bg {
+	  /* The image used */
+	  background-image: url("images/waterFlow_1.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	.bg2 {
+	  /* The image used */
+	  background-image: url("images/waterFlow_2.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	.bg3 {
+	  /* The image used */
+	  background-image: url("images/waterFlow_3.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	.bg4 {
+	  /* The image used */
+	  background-image: url("images/waterFlow_4.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	.bg5 {
+	  /* The image used */
+	  background-image: url("images/waterFlow_5.png"),url("images/bg.png");
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+
+
+	.wf_1{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_2{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_3{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_4{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_5{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_6{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_7{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_8{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_9{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_10{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_11{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_12{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_13{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_14{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_15{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_16{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf_17{
+		background-image: url("images/waterFlow_1_Sequence/waterFlow_10017.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+
+
+
+	.wf2_1{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_2{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_3{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_4{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_5{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_6{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_7{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_8{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_9{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_10{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_11{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_12{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_13{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_14{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_15{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf2_16{
+		background-image: url("images/waterFlow_2_Sequence/waterFlow_20016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+
+
+
+	.wf3_1{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_2{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_3{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_4{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_5{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_6{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_7{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_8{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_9{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_10{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_11{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_12{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_13{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_14{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_15{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_16{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf3_17{
+		background-image: url("images/waterFlow_3_Sequence/waterFlow_30017.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+
+
+	.wf4_1{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_2{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_3{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_4{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_5{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_6{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_7{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_8{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_9{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_10{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_11{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_12{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_13{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_14{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_15{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_16{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf4_17{
+		background-image: url("images/waterFlow_4_Sequence/waterFlow_40017.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+
+
+
+	.wf5_1{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50001.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_2{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50002.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_3{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50003.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_4{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50004.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_5{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50005.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_6{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50006.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_7{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50007.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_8{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50008.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_9{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50009.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_10{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50010.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_11{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50011.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_12{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50012.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_13{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50013.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_14{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50014.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_15{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50015.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_16{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50016.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+	.wf5_17{
+		background-image: url("images/waterFlow_5_Sequence/waterFlow_50017.png"),url("images/bg.png");	height: 100%; background-position: center; 	background-repeat: no-repeat;  	background-size: cover;
+	}
+
+
+
+
+	.centered {
+
+		background-image: linear-gradient(#3e9b68, #296846);
+		background-color: #3e9b68;
+		border-radius: 8px;
+		color: white;
+		font-family: "Helvetica";
+		font-weight: 100;
+		font-size: 20px;
+		padding: 7px;
+		text-decoration: none;
+		text-align: center;
+		/*width: 25%;*/
+
+		-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+
+	  position: absolute;
+	  top: 3.5%;
+	  left: 20%;
+	  transform: translate(-50%, -50%);
+	  font-size: 16px;
+	  font-style: normal;
+	  /*font-weight: bold;
+	  font-family: arial;*/
+
+	}
+
+/*.slidecontainer {
+
+	position: absolute;
+	top: 10%;
+	left: 18%;
+  	width: 20%;
+
+
+}*/
+
+.slidecontainer2 {
+	position: absolute;
+	top: 38%;
+	left: 70%;
+  width: 20%;
+
+}
+
+div.slidecontainer2 p{
+	position: relative;
+	text-align: left;
+	top: 48px;
+	left: 110%;
+	width: 19%;
+}
+
+div.slidecontainer2 span{
+	position: relative;
+	top: 63px;
+	color: white;
+	height: 50px;
+}
+
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+div.slidecontainer3 p{
+	position: relative;
+	text-align: left;
+	top: 48px;
+	left: 110%;
+	width: 15%;
+}
+
+div.slidecontainer3 span{
+	position: relative;
+	color: white;
+	top: 63px;
+}
+
+.slidecontainer3 {
+	position: absolute;
+	top: 47%;
+	left: 70%;
+  	width: 20%;
+  	height: 5px;
+}
+
+.rotateSlider{
+	/*transform: rotate(270deg);*/
+
+}
+
+
+#demo2{
+	background-color: white;
+	font-size: 20px;
+	padding: 2px;
+}
+#demo3{
+
+	background-color: white;
+	font-size: 20px;
+	padding: 2px;
+}
+
+.resetButton{
+	position: absolute;
+	top: 89%;
+	text-align: center;
+	width: 100px;
+	left: 70%;
+}
+
+.startButton{
+	position: absolute;
+	top: 89%;
+	text-align: center;
+	width: 100px;
+	left: 70%;
+
+}
+
+.calcStartButton{
+
+	width: 60%;
+}
+
+.darkHouses{
+	position: absolute;
+	top:-7%;
+	left: 70%;
+	background: url("images/darkHome.png");
+  	background-repeat: no-repeat;
+ 	background-size: 500px 250px;
+	height: 350px;
+	width: 650px;
+
+
+
+}
+
+.instruction_iconID{
+	position: absolute;
+	background: url("images/instruction_icon.png");
+	background-repeat: no-repeat;
+ 	background-size: 45px 45px;
+	height: 100px;
+	width: 100px;
+	top:1%;
+	left: 4%;
+	cursor: pointer;
+}
+
+#instructionBG{
+	position: absolute;
+	width: 36%;
+	height: 54%;
+	padding: 50px 0;
+	text-align: center;
+	background-color: black;
+	margin-top: 80px;
+	margin-left: 80px;
+	opacity: 0.7;
+}
+
+#instructionDATA{
+	position: absolute;
+	width: 33%;
+	height: 40%;
+	/*padding: 50px 0;*/
+	text-align: left;
+	margin-top: 85px;
+	margin-left: 97px;
+	color: white;
+	font-size: 19px;
+	line-height: 1.4;
+
+}
+
+
+
+[class*='close-'] {
+  color: #777;
+  font: 14px/100% arial, sans-serif;
+  position: absolute;
+  right: 5px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  top: 5px;
+}
+
+.close-classic:after {
+  content: 'X'; /* ANSI X letter */
+}
+
+.glowHouses{
+	position: absolute;
+	top:-7%;
+	left: 70%;
+	background: url("images/glowHome.png");
+  	background-repeat: no-repeat;
+ 	background-size: 500px 250px;
+	height: 350px;
+	width: 650px;
+
+}
+
+.rotatingTurbine{
+	position: absolute;
+
+	top:66.5%;
+	left:49.6%;
+	/*background-size: 500px 700px;*/
+	/*height: 500px;
+	width: 700px;*/
+}
+.rotatingTurbingSize{
+	height: 500px;
+	width: 700px;
+}
+
+.submitButton{
+		background-image: linear-gradient(#3e9b68, #296846);
+		background-color: #3e9b68;
+		border-radius: 9px;
+		cursor: pointer;
+		color: white;
+		font-family: "Helvetica";
+		font-weight: 100;
+		font-size: 20px;
+		padding: 8px;
+		text-decoration: none;
+		text-align: center;
+	}
+
+
+.submitButton:hover{
+		background-image: linear-gradient(#44dd88, #2eb489);
+		background-color: #44dd88;
+	}
+
+	.inputFrmKidBG{
+		position: absolute;
+		opacity: 0.7;
+		background-color: black;
+		padding: 19% 15.5%;
+		top:40%;
+		left:69%;
+	}
+	.inputFrmKid{
+		position: absolute;
+		color: white;
+		top:43%;
+		left:70%;
+
+	}
+
+	.forDescription{
+	 position: absolute;
+	 height: 50%;
+	 width: 50%;
+	 top:25%;
+	 left: 25%
+	 opacity: 0.5;
+	 background: black;
+
+	}
+
+	h3.fortext{
+		/*opacity: 0.5;*/
+		position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  /*width: 10%;*/
+	  color: blue;
+
+
+	}
+
+	.generatorIMG{
+		position: absolute;
+	top:33%;
+	left: 48%;
+	background: url("images/generator.png");
+  	background-repeat: no-repeat;
+ 	background-size: 190px 293px;
+	height: 276px;
+	width: 219px;
+	}
+
+	.briefDescription{
+		position: absolute;
+		top:65%;
+		left: 70%;
+		font-size: 16px;
+		color: white;
+
+	}
+
+	div.briefDescription p{
+		  display: block;
+		  margin-top: 0.4em;
+		  margin-bottom: 0em;
+		  margin-left: 0em;
+		  margin-right: 0em;
+	}
+
+	.logo {
+	  /* The image used */
+	position: absolute;
+	top:90%;
+	left:2%;
+	background: url("images/logo.png");
+  	background-repeat: no-repeat;
+ 	background-size: 150px 60px;
+	height: 70%;
+	width: 30%;
+	  /*background-size: cover;*/
+	}
+
+}
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_3.gif) center no-repeat #fff;
+}
+</style>
+</head>
+<body>
+	<div class="se-pre-con"></div>
+<div class="centered">Hydropower Plant</div>
+
+
+
+<!-- --------------------------------------------------------------------------------------------------- -->
+
+<!-- <div class="slidecontainer">
+	<p> <span id="demo"></span></p>
+  <input type="range" min="0" max="100" value="0" step="20" class="slider" id="myRange">
+</div> -->
+<div class="inputFrmKidBG"></div>
+
+
+<div class="generatorIMG"></div>
+
+
+<div  class="briefDescription">
+    <p id="des_n">Number of houses provided (n) = </p>
+    <p id="des_D">Total demand per day (D) = </p>
+    <!-- <p id="des_Value">Value of head height = </p> -->
+    <p id="des_Q">Flow rate (Q) = </p>
+    <p id="des_P">Power generated per day (P) = </p>
+    <p id="des_E">Energy generated per day (E) = </p>
+    <p id="des_Extra">Extra energy produced per day = </p>
+</div>
+
+<div id="instruction_iconID" onclick="onclickInfo()" class="instruction_iconID" ></div>
+<div id="instructionBG"><a onclick="closeINS()" href="#" class="close-classic"></a></div>
+
+
+
+</div>
+<div id="instructionDATA"><b>Power generated by the hydropower plant. </b><br>
+The power generated by a hydro power station mainly depends on two factors:  <br>
+Head height of water (h) <br>
+Flow rate of the water (Q)<br>
+The formula for the power generated from the hydroelectric power station is given below. <br>
+P = ρ.g.H.Q.η<br>
+Where, P = electrical power produced (W)<br>
+ρ = density of water (kg/m3)<br>
+g = acceleration due to gravity (m/s2) <br>
+H = elevation head of water (m)<br>
+Q = flow rate of water (m3/s) <br>
+η = overall efficiency of hydroelectric power station  <br>
+Unit of electric energy consumed (1 unit = 1 kWh)<br>
+1 kWh is the electric energy consumed by an electric device of power 1000 watt in one hour.
+</div>
+
+
+<div id="villageHome_2" class="glowHouses" ></div>
+<div id="villageHome_1" class="darkHouses" ></div>
+
+
+<div id="resetBtn" onclick="onClickResettt()" class="startButton submitButton">Reset</div>
+
+<div id="checkBtn" onclick="onclickStart()" class="startButton submitButton">Start</div>
+
+
+<!-- <div id="checkBtn" onclick="onclickStart()" class="startButton submitButton">Start</div> -->
+
+<!-- <div  id="bg_fixed" class="bg_fixed"></div> -->
+
+<div id="bg_1" class="bg"> </div>
+<div id="bg_2" class="bg2"> </div>
+<div id="bg_3" class="bg3"> </div>
+<div id="bg_4" class="bg4"> </div>
+<div id="bg_5" class="bg5"> </div>
+
+<div id="wf1" class="wf_1"> </div>
+<div id="wf2" class="wf_2"> </div>
+<div id="wf3" class="wf_3"> </div>
+<div id="wf4" class="wf_4"> </div>
+<div id="wf5" class="wf_5"> </div>
+<div id="wf6" class="wf_6"> </div>
+<div id="wf7" class="wf_7"> </div>
+<div id="wf8" class="wf_8"> </div>
+<div id="wf9" class="wf_9"> </div>
+<div id="wf10" class="wf_10"> </div>
+<div id="wf11" class="wf_11"> </div>
+<div id="wf12" class="wf_12"> </div>
+<div id="wf13" class="wf_13"> </div>
+<div id="wf14" class="wf_14"> </div>
+<div id="wf15" class="wf_15"> </div>
+<div id="wf16" class="wf_16"> </div>
+<div id="wf17" class="wf_17"> </div>
+
+<div id="wf2_1" class="wf2_1"> </div>
+<div id="wf2_2" class="wf2_2"> </div>
+<div id="wf2_3" class="wf2_3"> </div>
+<div id="wf2_4" class="wf2_4"> </div>
+<div id="wf2_5" class="wf2_5"> </div>
+<div id="wf2_6" class="wf2_6"> </div>
+<div id="wf2_7" class="wf2_7"> </div>
+<div id="wf2_8" class="wf2_8"> </div>
+<div id="wf2_9" class="wf2_9"> </div>
+<div id="wf2_10" class="wf2_10"> </div>
+<div id="wf2_11" class="wf2_11"> </div>
+<div id="wf2_12" class="wf2_12"> </div>
+<div id="wf2_13" class="wf2_13"> </div>
+<div id="wf2_14" class="wf2_14"> </div>
+<div id="wf2_15" class="wf2_15"> </div>
+<div id="wf2_16" class="wf2_16"> </div>
+
+<div id="wf3_1" class="wf3_1"> </div>
+<div id="wf3_2" class="wf3_2"> </div>
+<div id="wf3_3" class="wf3_3"> </div>
+<div id="wf3_4" class="wf3_4"> </div>
+<div id="wf3_5" class="wf3_5"> </div>
+<div id="wf3_6" class="wf3_6"> </div>
+<div id="wf3_7" class="wf3_7"> </div>
+<div id="wf3_8" class="wf3_8"> </div>
+<div id="wf3_9" class="wf3_9"> </div>
+<div id="wf3_10" class="wf3_10"> </div>
+<div id="wf3_11" class="wf3_11"> </div>
+<div id="wf3_12" class="wf3_12"> </div>
+<div id="wf3_13" class="wf3_13"> </div>
+<div id="wf3_14" class="wf3_14"> </div>
+<div id="wf3_15" class="wf3_15"> </div>
+<div id="wf3_16" class="wf3_16"> </div>
+<div id="wf3_17" class="wf3_17"> </div>
+
+<div id="wf4_1" class="wf4_1"> </div>
+<div id="wf4_2" class="wf4_2"> </div>
+<div id="wf4_3" class="wf4_3"> </div>
+<div id="wf4_4" class="wf4_4"> </div>
+<div id="wf4_5" class="wf4_5"> </div>
+<div id="wf4_6" class="wf4_6"> </div>
+<div id="wf4_7" class="wf4_7"> </div>
+<div id="wf4_8" class="wf4_8"> </div>
+<div id="wf4_9" class="wf4_9"> </div>
+<div id="wf4_10" class="wf4_10"> </div>
+<div id="wf4_11" class="wf4_11"> </div>
+<div id="wf4_12" class="wf4_12"> </div>
+<div id="wf4_13" class="wf4_13"> </div>
+<div id="wf4_14" class="wf4_14"> </div>
+<div id="wf4_15" class="wf4_15"> </div>
+<div id="wf4_16" class="wf4_16"> </div>
+<div id="wf4_17" class="wf4_17"> </div>
+
+<div id="wf5_1" class="wf5_1"> </div>
+<div id="wf5_2" class="wf5_2"> </div>
+<div id="wf5_3" class="wf5_3"> </div>
+<div id="wf5_4" class="wf5_4"> </div>
+<div id="wf5_5" class="wf5_5"> </div>
+<div id="wf5_6" class="wf5_6"> </div>
+<div id="wf5_7" class="wf5_7"> </div>
+<div id="wf5_8" class="wf5_8"> </div>
+<div id="wf5_9" class="wf5_9"> </div>
+<div id="wf5_10" class="wf5_10"> </div>
+<div id="wf5_11" class="wf5_11"> </div>
+<div id="wf5_12" class="wf5_12"> </div>
+<div id="wf5_13" class="wf5_13"> </div>
+<div id="wf5_14" class="wf5_14"> </div>
+<div id="wf5_15" class="wf5_15"> </div>
+<div id="wf5_16" class="wf5_16"> </div>
+<div id="wf5_17" class="wf5_17"> </div>
+
+
+
+
+
+<!-- rotating turbine image sequence -->
+<div id="imagesContainer" class="rotatingTurbine"></div>
+
+
+
+<div class="slidecontainer2">
+	<span>Efficiency of Plant</span>
+	<p id="demo2">80</p>
+  <input type="range" min="80" max="100" value="80" step="1" class="slider" id="myRange2">
+</div>
+
+<div class="slidecontainer3">
+	<!-- <p> <span id="demo3">20</span></p> -->
+	<span>Head height (m)</span>
+	<p id="demo3">20</p>
+  <input type="range" min="20" max="100" value="20" step="20" class="slider" id="myRange3">
+</div>
+
+<form class="inputFrmKid">
+	<!-- Number of houses : <input id="inputFrmKid" type="text" name="FirstName" value=""> -->
+	Number of houses : <input id="inputFrmKid" type="text" name="" maxlength="3" size="4" value="">
+</form>
+
+<div class="logo"></div>
+
+s
+
+  <!-- Modal content -->
+  <div class="hover_bkgr_fricc">
+    <span class="helper"></span>
+    <div>
+        <div class="popupCloseButton">X</div>
+        <p style="font-size: 20px"><b>You did not enter any value <BR> <BR>Please enter number of houses between 1-100<b></p>
+    </div>
+</div>
+
+<div class="hover_bkgr_fricc_exceed">
+    <span class="helper"></span>
+    <div>
+        <div class="popupCloseButton">X</div>
+        <p style="font-size: 20px"><b>You exceed the value of houses <BR> <BR>Please enter number of houses between 1-100<b></p>
+    </div>
+</div>
+
+<div class="hover_bkgr_fricc_SpecNotMet">
+    <span class="helper"></span>
+    <div>
+        <div class="popupCloseButton">X</div>
+        <p style="font-size: 20px"><b>Specifications are NOT met <BR> <BR>Increase the "Head height" or "Efficiency of Plant".<b></p>
+    </div>
+</div>
+
+<div class="hover_bkgr_fricc_meet">
+    <span class="helper"></span>
+    <div>
+        <div class="popupCloseButton">X</div>
+        <p style="font-size: 20px" top="50%" text-align="center" vertical-align ="middle"><b>Specifications are met <b></p>
+    </div>
+</div>
+
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>
+
+
+//document.getElementById("resetBtn").style.visibility = 'hidden';
+
+document.getElementById("instructionDATA").style.display = "none";
+	//document.getElementById("instruction_iconID").style.display = "none";
+	document.getElementById("instructionBG").style.display = "none";
+
+document.getElementById("villageHome_2").style.display = "none";
+document.getElementById("bg_1").style.display = "none";
+document.getElementById("bg_2").style.display = "none";
+document.getElementById("bg_3").style.display = "none";
+document.getElementById("bg_4").style.display = "none";
+document.getElementById("bg_5").style.display = "block";
+
+
+
+var startBol=true;
+/*var sliderVal_1=0;*/
+var sliderVal_2=80;
+var slide_2Value = sliderVal_2;
+var sliderVal_3=20;
+
+/*var fps = 50;*/
+var interval = 0;
+var bol=true;
+/*------------------------------------------RESET----------------------------------*/
+
+function onClickResettt(){
+
+
+	console.log("u clicked on reset")
+	location.reload();
+
+	//document.getElementById("des_n").innerHTML = "Number of houses provided (n) = " + _input.value;
+	//document.getElementById("inputFrmKid").innerHTML = 76;
+
+
+}
+
+
+/*-------------------------------------------GENERATOR SLIDER----------------------------------*/
+
+
+
+
+var slider2 = document.getElementById("myRange2");
+var output2 = document.getElementById("demo2");
+
+var tempValueSlider_2 = 40;
+var temp_interval = 0;
+
+output2.innerHTML = slider2.value;
+
+slider2.oninput = function() {
+
+	var temp = this.value;
+
+	if(temp == 100)
+	{
+		//output2.innerHTML = temp;
+		output2.innerHTML = 99.9 + "%";
+
+		slide_2Value = 99.9;
+		//console.log(output2.innerHTML);
+	}
+	else
+	{
+		output2.innerHTML = temp + "%";
+		slide_2Value = temp;
+		//console.log(output2.innerHTML);
+	}
+
+	sliderVal_2 = output2.innerHTML;
+
+	if(interval == 0){}
+
+		if(sliderVal_2 == 80){
+		tempValueSlider_2 = 40;
+		interval = interval + tempValueSlider_2;
+	}
+	else if(sliderVal_2 == 85){
+		tempValueSlider_2 = 30;
+		interval = interval + tempValueSlider_2;
+	}
+	else if(sliderVal_2 == 90){
+		tempValueSlider_2 = 20;
+		interval = interval + tempValueSlider_2;
+	}
+	else if(sliderVal_2 == 95){
+		tempValueSlider_2 = 10;
+		interval = interval + tempValueSlider_2;
+	}
+	else if(sliderVal_2 >95 ){
+		tempValueSlider_2 = 0;
+		interval = interval + tempValueSlider_2;
+	}
+
+
+		temp_interval = interval;
+		bol = false;
+
+}
+
+//to show default value of 80;
+document.getElementById("demo2").textContent="80%";
+
+
+
+/*-------------------------------------------GATE SLIDER----------------------------------*/
+var slider3 = document.getElementById("myRange3");
+var output3 = document.getElementById("demo3");
+
+
+output3.innerHTML = slider3.value;
+
+slider3.oninput = function() {
+  output3.innerHTML = this.value;
+
+
+
+	sliderVal_3 = output3.innerHTML;
+
+
+	/*console.log(sliderVal_3);*/
+
+
+
+/*add more condition to move height and loag images into css */
+	var x_1 = document.getElementById("bg_1");
+	var x_2 = document.getElementById("bg_2");
+	var x_3 = document.getElementById("bg_3");
+	var x_4 = document.getElementById("bg_4");
+	var x_5 = document.getElementById("bg_5");
+
+/*-------------------------interval is for speed of the turbine-----------------------*/
+
+
+
+	if(sliderVal_3 ==20 )
+	{
+		x_1.style.display = "none";
+		x_2.style.display = "none";
+		x_3.style.display = "none";
+		x_4.style.display = "none";
+		x_5.style.display = "block";
+
+
+		interval = Math.round(1000 / 10);
+		interval = interval + tempValueSlider_2;
+
+	}
+	else if(sliderVal_3 ==40 )
+	{
+		x_1.style.display = "none";
+		x_2.style.display = "none";
+		x_3.style.display = "none";
+		x_4.style.display = "block";
+		x_5.style.display = "none";
+		interval = Math.round(1000 / 20 );
+		interval = interval + tempValueSlider_2;
+	}
+	else if(sliderVal_3 ==60 )
+	{
+		x_1.style.display = "none";
+		x_2.style.display = "none";
+		x_3.style.display = "block";
+		x_4.style.display = "none";
+		x_5.style.display = "none";
+		interval = Math.round(1000 / 30 );
+		interval = interval + tempValueSlider_2;
+	}
+	else if(sliderVal_3 ==80 )
+	{
+		x_1.style.display = "none";
+		x_2.style.display = "block";
+		x_3.style.display = "none";
+		x_4.style.display = "none";
+		x_5.style.display = "none";
+		interval = Math.round(1000 / 40 );
+		interval = interval + tempValueSlider_2;
+	}
+	else if(sliderVal_3 ==100 )
+	{
+		x_1.style.display = "block";
+		x_2.style.display = "none";
+		x_3.style.display = "none";
+		x_4.style.display = "none";
+		x_5.style.display = "none";
+		interval = Math.round(1000 / 50 );
+		interval = interval + tempValueSlider_2;
+	}
+
+		temp_interval = interval;
+		bol = false;
+
+
+}
+
+
+//to show default value of 100;
+document.getElementById("demo3").textContent="20";
+
+function onclickInfo(){
+
+	document.getElementById("instructionDATA").style.display = "block";
+	//document.getElementById("instruction_iconID").style.display = "block";
+	document.getElementById("instructionBG").style.display = "block";
+
+
+}
+
+function closeINS(){
+	document.getElementById("instructionDATA").style.display = "none";
+	//document.getElementById("instruction_iconID").style.display = "none";
+	document.getElementById("instructionBG").style.display = "none";
+}
+
+/*-------------------------------------------end of function ----------------------------------------------------*/
+
+
+function onclickStart() {
+	//startBol = false;
+
+	console.log("slider3.value$$$$$$$$$$$$$$$$ " + startBol)
+
+	var _input = document.getElementById("inputFrmKid");
+
+	if(_input.value.length == 0)
+	{
+
+		    	//console.log("urinside")
+		       $('.hover_bkgr_fricc').show();
+		       _input.value = "";
+	}
+
+	else if(_input.value == 0)
+	{
+		$('.hover_bkgr_fricc').show();
+		_input.value = "";
+	}
+
+	else if(_input.value <= -1)
+	{
+		$('.hover_bkgr_fricc').show();
+		 _input.value = "";
+	}
+
+	else if(_input.value >= 101)
+	{
+		$('.hover_bkgr_fricc_exceed').show();
+		_input.value = "";
+	}
+
+	else if(_input.value <= 100 && _input.value >= 1)
+	{
+
+		document.getElementById("checkBtn").style.visibility = 'hidden';
+		document.getElementById("myRange2").disabled = true;
+		document.getElementById("myRange3").disabled = true;
+		document.getElementById("resetBtn").style.visibility = 'visible';
+
+	if(slider3.value == 100){
+
+    $(function () {
+        var i = 1;
+
+        //hover_bkgr_fricc_SpecNotMet
+
+        setInterval(function () {
+
+
+           		document.getElementById("bg_1").style.display = "none";
+           	 	document.getElementById("bg_2").style.display = "none";
+           	 	document.getElementById("bg_3").style.display = "none";
+           	 	document.getElementById("bg_4").style.display = "none";
+           	 	document.getElementById("bg_5").style.display = "none";
+           	 	document.getElementById("wf1").style.display = "none";
+           	 	document.getElementById("wf2").style.display = "none";
+           	 	document.getElementById("wf3").style.display = "none";
+           	 	document.getElementById("wf4").style.display = "none";
+           	 	document.getElementById("wf5").style.display = "none";
+           	 	document.getElementById("wf6").style.display = "none";
+           	 	document.getElementById("wf7").style.display = "none";
+           	 	document.getElementById("wf8").style.display = "none";
+           	 	document.getElementById("wf9").style.display = "none";
+           	 	document.getElementById("wf10").style.display = "none";
+           	 	document.getElementById("wf11").style.display = "none";
+           	 	document.getElementById("wf12").style.display = "none";
+           	 	document.getElementById("wf13").style.display = "none";
+           	 	document.getElementById("wf14").style.display = "none";
+           	 	document.getElementById("wf15").style.display = "none";
+           	 	document.getElementById("wf16").style.display = "none";
+           	 	document.getElementById("wf17").style.display = "none";
+
+           	 	document.getElementById("wf2_1").style.display = "none";
+           	 	document.getElementById("wf2_2").style.display = "none";
+           	 	document.getElementById("wf2_3").style.display = "none";
+           	 	document.getElementById("wf2_4").style.display = "none";
+           	 	document.getElementById("wf2_5").style.display = "none";
+           	 	document.getElementById("wf2_6").style.display = "none";
+           	 	document.getElementById("wf2_7").style.display = "none";
+           	 	document.getElementById("wf2_8").style.display = "none";
+           	 	document.getElementById("wf2_9").style.display = "none";
+           	 	document.getElementById("wf2_10").style.display = "none";
+           	 	document.getElementById("wf2_11").style.display = "none";
+           	 	document.getElementById("wf2_12").style.display = "none";
+           	 	document.getElementById("wf2_13").style.display = "none";
+           	 	document.getElementById("wf2_14").style.display = "none";
+           	 	document.getElementById("wf2_15").style.display = "none";
+           	 	document.getElementById("wf2_16").style.display = "none";
+
+           	 	document.getElementById("wf3_1").style.display = "none";
+           	 	document.getElementById("wf3_2").style.display = "none";
+           	 	document.getElementById("wf3_3").style.display = "none";
+           	 	document.getElementById("wf3_4").style.display = "none";
+           	 	document.getElementById("wf3_5").style.display = "none";
+           	 	document.getElementById("wf3_6").style.display = "none";
+           	 	document.getElementById("wf3_7").style.display = "none";
+           	 	document.getElementById("wf3_8").style.display = "none";
+           	 	document.getElementById("wf3_9").style.display = "none";
+           	 	document.getElementById("wf3_10").style.display = "none";
+           	 	document.getElementById("wf3_11").style.display = "none";
+           	 	document.getElementById("wf3_12").style.display = "none";
+           	 	document.getElementById("wf3_13").style.display = "none";
+           	 	document.getElementById("wf3_14").style.display = "none";
+           	 	document.getElementById("wf3_15").style.display = "none";
+           	 	document.getElementById("wf3_16").style.display = "none";
+           	 	document.getElementById("wf3_17").style.display = "none";
+
+           	 	document.getElementById("wf4_1").style.display = "none";
+           	 	document.getElementById("wf4_2").style.display = "none";
+           	 	document.getElementById("wf4_3").style.display = "none";
+           	 	document.getElementById("wf4_4").style.display = "none";
+           	 	document.getElementById("wf4_5").style.display = "none";
+           	 	document.getElementById("wf4_6").style.display = "none";
+           	 	document.getElementById("wf4_7").style.display = "none";
+           	 	document.getElementById("wf4_8").style.display = "none";
+           	 	document.getElementById("wf4_9").style.display = "none";
+           	 	document.getElementById("wf4_10").style.display = "none";
+           	 	document.getElementById("wf4_11").style.display = "none";
+           	 	document.getElementById("wf4_12").style.display = "none";
+           	 	document.getElementById("wf4_13").style.display = "none";
+           	 	document.getElementById("wf4_14").style.display = "none";
+           	 	document.getElementById("wf4_15").style.display = "none";
+           	 	document.getElementById("wf4_16").style.display = "none";
+           	 	document.getElementById("wf4_17").style.display = "none";
+
+           	 	document.getElementById("wf5_1").style.display = "none";
+           	 	document.getElementById("wf5_2").style.display = "none";
+           	 	document.getElementById("wf5_3").style.display = "none";
+           	 	document.getElementById("wf5_4").style.display = "none";
+           	 	document.getElementById("wf5_5").style.display = "none";
+           	 	document.getElementById("wf5_6").style.display = "none";
+           	 	document.getElementById("wf5_7").style.display = "none";
+           	 	document.getElementById("wf5_8").style.display = "none";
+           	 	document.getElementById("wf5_9").style.display = "none";
+           	 	document.getElementById("wf5_10").style.display = "none";
+           	 	document.getElementById("wf5_11").style.display = "none";
+           	 	document.getElementById("wf5_12").style.display = "none";
+           	 	document.getElementById("wf5_13").style.display = "none";
+           	 	document.getElementById("wf5_14").style.display = "none";
+           	 	document.getElementById("wf5_15").style.display = "none";
+           	 	document.getElementById("wf5_16").style.display = "none";
+           	 	document.getElementById("wf5_17").style.display = "none";
+
+        if(i<17) {
+			i++;
+			console.log(i);
+			document.getElementById("wf"+i).style.display = "block";
+		} else {
+           	document.getElementById("wf"+i).style.display = "block";
+           	//console("do nothing");
+        }
+
+        }, 100);  // Increased the time log to 1 second
+    });
+
+}
+/*----------------------------------------------end of 100------------------------------------------------------*/
+
+else if(slider3.value == 80){
+
+    $(function () {
+        var i = 1;
+
+        setInterval(function () {
+
+
+           		document.getElementById("bg_1").style.display = "none";
+           	 	document.getElementById("bg_2").style.display = "none";
+           	 	document.getElementById("bg_3").style.display = "none";
+           	 	document.getElementById("bg_4").style.display = "none";
+           	 	document.getElementById("bg_5").style.display = "none";
+           	 	document.getElementById("wf1").style.display = "none";
+           	 	document.getElementById("wf2").style.display = "none";
+           	 	document.getElementById("wf3").style.display = "none";
+           	 	document.getElementById("wf4").style.display = "none";
+           	 	document.getElementById("wf5").style.display = "none";
+           	 	document.getElementById("wf6").style.display = "none";
+           	 	document.getElementById("wf7").style.display = "none";
+           	 	document.getElementById("wf8").style.display = "none";
+           	 	document.getElementById("wf9").style.display = "none";
+           	 	document.getElementById("wf10").style.display = "none";
+           	 	document.getElementById("wf11").style.display = "none";
+           	 	document.getElementById("wf12").style.display = "none";
+           	 	document.getElementById("wf13").style.display = "none";
+           	 	document.getElementById("wf14").style.display = "none";
+           	 	document.getElementById("wf15").style.display = "none";
+           	 	document.getElementById("wf16").style.display = "none";
+           	 	document.getElementById("wf17").style.display = "none";
+
+           	 	document.getElementById("wf2_1").style.display = "none";
+           	 	document.getElementById("wf2_2").style.display = "none";
+           	 	document.getElementById("wf2_3").style.display = "none";
+           	 	document.getElementById("wf2_4").style.display = "none";
+           	 	document.getElementById("wf2_5").style.display = "none";
+           	 	document.getElementById("wf2_6").style.display = "none";
+           	 	document.getElementById("wf2_7").style.display = "none";
+           	 	document.getElementById("wf2_8").style.display = "none";
+           	 	document.getElementById("wf2_9").style.display = "none";
+           	 	document.getElementById("wf2_10").style.display = "none";
+           	 	document.getElementById("wf2_11").style.display = "none";
+           	 	document.getElementById("wf2_12").style.display = "none";
+           	 	document.getElementById("wf2_13").style.display = "none";
+           	 	document.getElementById("wf2_14").style.display = "none";
+           	 	document.getElementById("wf2_15").style.display = "none";
+           	 	document.getElementById("wf2_16").style.display = "none";
+
+           	 	document.getElementById("wf3_1").style.display = "none";
+           	 	document.getElementById("wf3_2").style.display = "none";
+           	 	document.getElementById("wf3_3").style.display = "none";
+           	 	document.getElementById("wf3_4").style.display = "none";
+           	 	document.getElementById("wf3_5").style.display = "none";
+           	 	document.getElementById("wf3_6").style.display = "none";
+           	 	document.getElementById("wf3_7").style.display = "none";
+           	 	document.getElementById("wf3_8").style.display = "none";
+           	 	document.getElementById("wf3_9").style.display = "none";
+           	 	document.getElementById("wf3_10").style.display = "none";
+           	 	document.getElementById("wf3_11").style.display = "none";
+           	 	document.getElementById("wf3_12").style.display = "none";
+           	 	document.getElementById("wf3_13").style.display = "none";
+           	 	document.getElementById("wf3_14").style.display = "none";
+           	 	document.getElementById("wf3_15").style.display = "none";
+           	 	document.getElementById("wf3_16").style.display = "none";
+           	 	document.getElementById("wf3_17").style.display = "none";
+
+           	 	document.getElementById("wf4_1").style.display = "none";
+           	 	document.getElementById("wf4_2").style.display = "none";
+           	 	document.getElementById("wf4_3").style.display = "none";
+           	 	document.getElementById("wf4_4").style.display = "none";
+           	 	document.getElementById("wf4_5").style.display = "none";
+           	 	document.getElementById("wf4_6").style.display = "none";
+           	 	document.getElementById("wf4_7").style.display = "none";
+           	 	document.getElementById("wf4_8").style.display = "none";
+           	 	document.getElementById("wf4_9").style.display = "none";
+           	 	document.getElementById("wf4_10").style.display = "none";
+           	 	document.getElementById("wf4_11").style.display = "none";
+           	 	document.getElementById("wf4_12").style.display = "none";
+           	 	document.getElementById("wf4_13").style.display = "none";
+           	 	document.getElementById("wf4_14").style.display = "none";
+           	 	document.getElementById("wf4_15").style.display = "none";
+           	 	document.getElementById("wf4_16").style.display = "none";
+           	 	document.getElementById("wf4_17").style.display = "none";
+
+           	 	document.getElementById("wf5_1").style.display = "none";
+           	 	document.getElementById("wf5_2").style.display = "none";
+           	 	document.getElementById("wf5_3").style.display = "none";
+           	 	document.getElementById("wf5_4").style.display = "none";
+           	 	document.getElementById("wf5_5").style.display = "none";
+           	 	document.getElementById("wf5_6").style.display = "none";
+           	 	document.getElementById("wf5_7").style.display = "none";
+           	 	document.getElementById("wf5_8").style.display = "none";
+           	 	document.getElementById("wf5_9").style.display = "none";
+           	 	document.getElementById("wf5_10").style.display = "none";
+           	 	document.getElementById("wf5_11").style.display = "none";
+           	 	document.getElementById("wf5_12").style.display = "none";
+           	 	document.getElementById("wf5_13").style.display = "none";
+           	 	document.getElementById("wf5_14").style.display = "none";
+           	 	document.getElementById("wf5_15").style.display = "none";
+           	 	document.getElementById("wf5_16").style.display = "none";
+           	 	document.getElementById("wf5_17").style.display = "none";
+
+
+
+           if(i<16)
+           {
+           	i++;
+           	 	console.log(i);
+
+           	 	document.getElementById("wf2_"+i).style.display = "block";
+
+           }
+           else
+           {
+           	document.getElementById("wf2_"+i).style.display = "block";
+           	//console("do nothing");
+           }
+
+        }, 100);  // Increased the time log to 1 second
+    });
+
+}
+/*-------------------------------------------end of 80---------------------------------------------------------*/
+
+else if(slider3.value == 60){
+
+    $(function () {
+        var i = 1;
+
+        setInterval(function () {
+
+
+           		document.getElementById("bg_1").style.display = "none";
+           	 	document.getElementById("bg_2").style.display = "none";
+           	 	document.getElementById("bg_3").style.display = "none";
+           	 	document.getElementById("bg_4").style.display = "none";
+           	 	document.getElementById("bg_5").style.display = "none";
+           	 	document.getElementById("wf1").style.display = "none";
+           	 	document.getElementById("wf2").style.display = "none";
+           	 	document.getElementById("wf3").style.display = "none";
+           	 	document.getElementById("wf4").style.display = "none";
+           	 	document.getElementById("wf5").style.display = "none";
+           	 	document.getElementById("wf6").style.display = "none";
+           	 	document.getElementById("wf7").style.display = "none";
+           	 	document.getElementById("wf8").style.display = "none";
+           	 	document.getElementById("wf9").style.display = "none";
+           	 	document.getElementById("wf10").style.display = "none";
+           	 	document.getElementById("wf11").style.display = "none";
+           	 	document.getElementById("wf12").style.display = "none";
+           	 	document.getElementById("wf13").style.display = "none";
+           	 	document.getElementById("wf14").style.display = "none";
+           	 	document.getElementById("wf15").style.display = "none";
+           	 	document.getElementById("wf16").style.display = "none";
+           	 	document.getElementById("wf17").style.display = "none";
+
+           	 	document.getElementById("wf2_1").style.display = "none";
+           	 	document.getElementById("wf2_2").style.display = "none";
+           	 	document.getElementById("wf2_3").style.display = "none";
+           	 	document.getElementById("wf2_4").style.display = "none";
+           	 	document.getElementById("wf2_5").style.display = "none";
+           	 	document.getElementById("wf2_6").style.display = "none";
+           	 	document.getElementById("wf2_7").style.display = "none";
+           	 	document.getElementById("wf2_8").style.display = "none";
+           	 	document.getElementById("wf2_9").style.display = "none";
+           	 	document.getElementById("wf2_10").style.display = "none";
+           	 	document.getElementById("wf2_11").style.display = "none";
+           	 	document.getElementById("wf2_12").style.display = "none";
+           	 	document.getElementById("wf2_13").style.display = "none";
+           	 	document.getElementById("wf2_14").style.display = "none";
+           	 	document.getElementById("wf2_15").style.display = "none";
+           	 	document.getElementById("wf2_16").style.display = "none";
+
+           	 	document.getElementById("wf3_1").style.display = "none";
+           	 	document.getElementById("wf3_2").style.display = "none";
+           	 	document.getElementById("wf3_3").style.display = "none";
+           	 	document.getElementById("wf3_4").style.display = "none";
+           	 	document.getElementById("wf3_5").style.display = "none";
+           	 	document.getElementById("wf3_6").style.display = "none";
+           	 	document.getElementById("wf3_7").style.display = "none";
+           	 	document.getElementById("wf3_8").style.display = "none";
+           	 	document.getElementById("wf3_9").style.display = "none";
+           	 	document.getElementById("wf3_10").style.display = "none";
+           	 	document.getElementById("wf3_11").style.display = "none";
+           	 	document.getElementById("wf3_12").style.display = "none";
+           	 	document.getElementById("wf3_13").style.display = "none";
+           	 	document.getElementById("wf3_14").style.display = "none";
+           	 	document.getElementById("wf3_15").style.display = "none";
+           	 	document.getElementById("wf3_16").style.display = "none";
+           	 	document.getElementById("wf3_17").style.display = "none";
+
+           	 	document.getElementById("wf4_1").style.display = "none";
+           	 	document.getElementById("wf4_2").style.display = "none";
+           	 	document.getElementById("wf4_3").style.display = "none";
+           	 	document.getElementById("wf4_4").style.display = "none";
+           	 	document.getElementById("wf4_5").style.display = "none";
+           	 	document.getElementById("wf4_6").style.display = "none";
+           	 	document.getElementById("wf4_7").style.display = "none";
+           	 	document.getElementById("wf4_8").style.display = "none";
+           	 	document.getElementById("wf4_9").style.display = "none";
+           	 	document.getElementById("wf4_10").style.display = "none";
+           	 	document.getElementById("wf4_11").style.display = "none";
+           	 	document.getElementById("wf4_12").style.display = "none";
+           	 	document.getElementById("wf4_13").style.display = "none";
+           	 	document.getElementById("wf4_14").style.display = "none";
+           	 	document.getElementById("wf4_15").style.display = "none";
+           	 	document.getElementById("wf4_16").style.display = "none";
+           	 	document.getElementById("wf4_17").style.display = "none";
+
+           	 	document.getElementById("wf5_1").style.display = "none";
+           	 	document.getElementById("wf5_2").style.display = "none";
+           	 	document.getElementById("wf5_3").style.display = "none";
+           	 	document.getElementById("wf5_4").style.display = "none";
+           	 	document.getElementById("wf5_5").style.display = "none";
+           	 	document.getElementById("wf5_6").style.display = "none";
+           	 	document.getElementById("wf5_7").style.display = "none";
+           	 	document.getElementById("wf5_8").style.display = "none";
+           	 	document.getElementById("wf5_9").style.display = "none";
+           	 	document.getElementById("wf5_10").style.display = "none";
+           	 	document.getElementById("wf5_11").style.display = "none";
+           	 	document.getElementById("wf5_12").style.display = "none";
+           	 	document.getElementById("wf5_13").style.display = "none";
+           	 	document.getElementById("wf5_14").style.display = "none";
+           	 	document.getElementById("wf5_15").style.display = "none";
+           	 	document.getElementById("wf5_16").style.display = "none";
+           	 	document.getElementById("wf5_17").style.display = "none";
+
+           if(i<17)
+           {
+           	i++;
+           	 	console.log(i);
+
+           	 	document.getElementById("wf3_"+i).style.display = "block";
+
+           }
+           else
+           {
+           	document.getElementById("wf3_"+i).style.display = "block";
+           	//console("do nothing");
+           }
+
+        }, 100);  // Increased the time log to 1 second
+    });
+
+}
+/*---------------------------------------------end of 60-------------------------------------------------------*/
+
+else if(slider3.value == 40){
+
+    $(function () {
+        var i = 1;
+
+        setInterval(function () {
+
+
+           		document.getElementById("bg_1").style.display = "none";
+           	 	document.getElementById("bg_2").style.display = "none";
+           	 	document.getElementById("bg_3").style.display = "none";
+           	 	document.getElementById("bg_4").style.display = "none";
+           	 	document.getElementById("bg_5").style.display = "none";
+           	 	document.getElementById("wf1").style.display = "none";
+           	 	document.getElementById("wf2").style.display = "none";
+           	 	document.getElementById("wf3").style.display = "none";
+           	 	document.getElementById("wf4").style.display = "none";
+           	 	document.getElementById("wf5").style.display = "none";
+           	 	document.getElementById("wf6").style.display = "none";
+           	 	document.getElementById("wf7").style.display = "none";
+           	 	document.getElementById("wf8").style.display = "none";
+           	 	document.getElementById("wf9").style.display = "none";
+           	 	document.getElementById("wf10").style.display = "none";
+           	 	document.getElementById("wf11").style.display = "none";
+           	 	document.getElementById("wf12").style.display = "none";
+           	 	document.getElementById("wf13").style.display = "none";
+           	 	document.getElementById("wf14").style.display = "none";
+           	 	document.getElementById("wf15").style.display = "none";
+           	 	document.getElementById("wf16").style.display = "none";
+           	 	document.getElementById("wf17").style.display = "none";
+
+           	 	document.getElementById("wf2_1").style.display = "none";
+           	 	document.getElementById("wf2_2").style.display = "none";
+           	 	document.getElementById("wf2_3").style.display = "none";
+           	 	document.getElementById("wf2_4").style.display = "none";
+           	 	document.getElementById("wf2_5").style.display = "none";
+           	 	document.getElementById("wf2_6").style.display = "none";
+           	 	document.getElementById("wf2_7").style.display = "none";
+           	 	document.getElementById("wf2_8").style.display = "none";
+           	 	document.getElementById("wf2_9").style.display = "none";
+           	 	document.getElementById("wf2_10").style.display = "none";
+           	 	document.getElementById("wf2_11").style.display = "none";
+           	 	document.getElementById("wf2_12").style.display = "none";
+           	 	document.getElementById("wf2_13").style.display = "none";
+           	 	document.getElementById("wf2_14").style.display = "none";
+           	 	document.getElementById("wf2_15").style.display = "none";
+           	 	document.getElementById("wf2_16").style.display = "none";
+
+           	 	document.getElementById("wf3_1").style.display = "none";
+           	 	document.getElementById("wf3_2").style.display = "none";
+           	 	document.getElementById("wf3_3").style.display = "none";
+           	 	document.getElementById("wf3_4").style.display = "none";
+           	 	document.getElementById("wf3_5").style.display = "none";
+           	 	document.getElementById("wf3_6").style.display = "none";
+           	 	document.getElementById("wf3_7").style.display = "none";
+           	 	document.getElementById("wf3_8").style.display = "none";
+           	 	document.getElementById("wf3_9").style.display = "none";
+           	 	document.getElementById("wf3_10").style.display = "none";
+           	 	document.getElementById("wf3_11").style.display = "none";
+           	 	document.getElementById("wf3_12").style.display = "none";
+           	 	document.getElementById("wf3_13").style.display = "none";
+           	 	document.getElementById("wf3_14").style.display = "none";
+           	 	document.getElementById("wf3_15").style.display = "none";
+           	 	document.getElementById("wf3_16").style.display = "none";
+           	 	document.getElementById("wf3_17").style.display = "none";
+
+           	 	document.getElementById("wf4_1").style.display = "none";
+           	 	document.getElementById("wf4_2").style.display = "none";
+           	 	document.getElementById("wf4_3").style.display = "none";
+           	 	document.getElementById("wf4_4").style.display = "none";
+           	 	document.getElementById("wf4_5").style.display = "none";
+           	 	document.getElementById("wf4_6").style.display = "none";
+           	 	document.getElementById("wf4_7").style.display = "none";
+           	 	document.getElementById("wf4_8").style.display = "none";
+           	 	document.getElementById("wf4_9").style.display = "none";
+           	 	document.getElementById("wf4_10").style.display = "none";
+           	 	document.getElementById("wf4_11").style.display = "none";
+           	 	document.getElementById("wf4_12").style.display = "none";
+           	 	document.getElementById("wf4_13").style.display = "none";
+           	 	document.getElementById("wf4_14").style.display = "none";
+           	 	document.getElementById("wf4_15").style.display = "none";
+           	 	document.getElementById("wf4_16").style.display = "none";
+           	 	document.getElementById("wf4_17").style.display = "none";
+
+           	 	document.getElementById("wf5_1").style.display = "none";
+           	 	document.getElementById("wf5_2").style.display = "none";
+           	 	document.getElementById("wf5_3").style.display = "none";
+           	 	document.getElementById("wf5_4").style.display = "none";
+           	 	document.getElementById("wf5_5").style.display = "none";
+           	 	document.getElementById("wf5_6").style.display = "none";
+           	 	document.getElementById("wf5_7").style.display = "none";
+           	 	document.getElementById("wf5_8").style.display = "none";
+           	 	document.getElementById("wf5_9").style.display = "none";
+           	 	document.getElementById("wf5_10").style.display = "none";
+           	 	document.getElementById("wf5_11").style.display = "none";
+           	 	document.getElementById("wf5_12").style.display = "none";
+           	 	document.getElementById("wf5_13").style.display = "none";
+           	 	document.getElementById("wf5_14").style.display = "none";
+           	 	document.getElementById("wf5_15").style.display = "none";
+           	 	document.getElementById("wf5_16").style.display = "none";
+           	 	document.getElementById("wf5_17").style.display = "none";
+
+           if(i<17)
+           {
+           	i++;
+           	 	console.log(i);
+
+           	 	document.getElementById("wf4_"+i).style.display = "block";
+
+           }
+           else
+           {
+           	document.getElementById("wf4_"+i).style.display = "block";
+           	//console("do nothing");
+           }
+
+        }, 100);  // Increased the time log to 1 second
+    });
+
+}
+/*------------------------------------------end of 40----------------------------------------------------------*/
+
+else if(slider3.value == 20){
+
+
+
+    $(function () {
+        var i = 1;
+
+        setInterval(function () {
+
+
+           		document.getElementById("bg_1").style.display = "none";
+           	 	document.getElementById("bg_2").style.display = "none";
+           	 	document.getElementById("bg_3").style.display = "none";
+           	 	document.getElementById("bg_4").style.display = "none";
+           	 	document.getElementById("bg_5").style.display = "none";
+           	 	document.getElementById("wf1").style.display = "none";
+           	 	document.getElementById("wf2").style.display = "none";
+           	 	document.getElementById("wf3").style.display = "none";
+           	 	document.getElementById("wf4").style.display = "none";
+           	 	document.getElementById("wf5").style.display = "none";
+           	 	document.getElementById("wf6").style.display = "none";
+           	 	document.getElementById("wf7").style.display = "none";
+           	 	document.getElementById("wf8").style.display = "none";
+           	 	document.getElementById("wf9").style.display = "none";
+           	 	document.getElementById("wf10").style.display = "none";
+           	 	document.getElementById("wf11").style.display = "none";
+           	 	document.getElementById("wf12").style.display = "none";
+           	 	document.getElementById("wf13").style.display = "none";
+           	 	document.getElementById("wf14").style.display = "none";
+           	 	document.getElementById("wf15").style.display = "none";
+           	 	document.getElementById("wf16").style.display = "none";
+           	 	document.getElementById("wf17").style.display = "none";
+
+           	 	document.getElementById("wf2_1").style.display = "none";
+           	 	document.getElementById("wf2_2").style.display = "none";
+           	 	document.getElementById("wf2_3").style.display = "none";
+           	 	document.getElementById("wf2_4").style.display = "none";
+           	 	document.getElementById("wf2_5").style.display = "none";
+           	 	document.getElementById("wf2_6").style.display = "none";
+           	 	document.getElementById("wf2_7").style.display = "none";
+           	 	document.getElementById("wf2_8").style.display = "none";
+           	 	document.getElementById("wf2_9").style.display = "none";
+           	 	document.getElementById("wf2_10").style.display = "none";
+           	 	document.getElementById("wf2_11").style.display = "none";
+           	 	document.getElementById("wf2_12").style.display = "none";
+           	 	document.getElementById("wf2_13").style.display = "none";
+           	 	document.getElementById("wf2_14").style.display = "none";
+           	 	document.getElementById("wf2_15").style.display = "none";
+           	 	document.getElementById("wf2_16").style.display = "none";
+
+           	 	document.getElementById("wf3_1").style.display = "none";
+           	 	document.getElementById("wf3_2").style.display = "none";
+           	 	document.getElementById("wf3_3").style.display = "none";
+           	 	document.getElementById("wf3_4").style.display = "none";
+           	 	document.getElementById("wf3_5").style.display = "none";
+           	 	document.getElementById("wf3_6").style.display = "none";
+           	 	document.getElementById("wf3_7").style.display = "none";
+           	 	document.getElementById("wf3_8").style.display = "none";
+           	 	document.getElementById("wf3_9").style.display = "none";
+           	 	document.getElementById("wf3_10").style.display = "none";
+           	 	document.getElementById("wf3_11").style.display = "none";
+           	 	document.getElementById("wf3_12").style.display = "none";
+           	 	document.getElementById("wf3_13").style.display = "none";
+           	 	document.getElementById("wf3_14").style.display = "none";
+           	 	document.getElementById("wf3_15").style.display = "none";
+           	 	document.getElementById("wf3_16").style.display = "none";
+           	 	document.getElementById("wf3_17").style.display = "none";
+
+           	 	document.getElementById("wf4_1").style.display = "none";
+           	 	document.getElementById("wf4_2").style.display = "none";
+           	 	document.getElementById("wf4_3").style.display = "none";
+           	 	document.getElementById("wf4_4").style.display = "none";
+           	 	document.getElementById("wf4_5").style.display = "none";
+           	 	document.getElementById("wf4_6").style.display = "none";
+           	 	document.getElementById("wf4_7").style.display = "none";
+           	 	document.getElementById("wf4_8").style.display = "none";
+           	 	document.getElementById("wf4_9").style.display = "none";
+           	 	document.getElementById("wf4_10").style.display = "none";
+           	 	document.getElementById("wf4_11").style.display = "none";
+           	 	document.getElementById("wf4_12").style.display = "none";
+           	 	document.getElementById("wf4_13").style.display = "none";
+           	 	document.getElementById("wf4_14").style.display = "none";
+           	 	document.getElementById("wf4_15").style.display = "none";
+           	 	document.getElementById("wf4_16").style.display = "none";
+           	 	document.getElementById("wf4_17").style.display = "none";
+
+           	 	document.getElementById("wf5_1").style.display = "none";
+           	 	document.getElementById("wf5_2").style.display = "none";
+           	 	document.getElementById("wf5_3").style.display = "none";
+           	 	document.getElementById("wf5_4").style.display = "none";
+           	 	document.getElementById("wf5_5").style.display = "none";
+           	 	document.getElementById("wf5_6").style.display = "none";
+           	 	document.getElementById("wf5_7").style.display = "none";
+           	 	document.getElementById("wf5_8").style.display = "none";
+           	 	document.getElementById("wf5_9").style.display = "none";
+           	 	document.getElementById("wf5_10").style.display = "none";
+           	 	document.getElementById("wf5_11").style.display = "none";
+           	 	document.getElementById("wf5_12").style.display = "none";
+           	 	document.getElementById("wf5_13").style.display = "none";
+           	 	document.getElementById("wf5_14").style.display = "none";
+           	 	document.getElementById("wf5_15").style.display = "none";
+           	 	document.getElementById("wf5_16").style.display = "none";
+           	 	document.getElementById("wf5_17").style.display = "none";
+
+           if(i<17)
+           {
+           	i++;
+           	 	console.log(i);
+
+           	 	document.getElementById("wf5_"+i).style.display = "block";
+
+           }
+           else
+           {
+           	document.getElementById("wf5_"+i).style.display = "block";
+           	//console("do nothing");
+           }
+
+        }, 100); // Increased the time log to 1 second
+    });
+
+}
+/*-----------------------------------------end of 20-----------------------------------------------------------*/
+
+    if(bol == true){interval = 100  + 40}
+
+
+	temp_interval = interval;
+
+
+	init();
+
+
+	/*console.log(sliderVal_1);*/
+	console.log("slide_2Value>>> " + slide_2Value);
+	var temp = 0;
+	temp = slide_2Value/100;
+	console.log("temp>>> "+temp);
+
+
+
+	console.log("asdfadsf>>> "+_input.value);
+
+
+
+	console.log("sliderVal_3>>>$$$$$$$$$$$$$$$$$$$$$$$$$$$$$> "+sliderVal_3);
+	console.log("temp>>>$$$$$$$$$$$$$$$$$$$$$$$$$$$$$> "+temp);
+
+
+	var _power = Math.round(10.587*temp*sliderVal_3);
+	var desPowerPerDay = Math.round(_power/24);
+	var desExtraEnergyProduced = _power - (_input.value*10);
+
+
+
+	document.getElementById("des_n").innerHTML = "Number of houses provided (n) = " + _input.value;
+	document.getElementById("des_D").innerHTML = "Total demand per day (D) = " + _input.value*10 + " kWh";
+	/*document.getElementById("des_Value").innerHTML = "Value of head height = " + sliderVal_3 + " m"; */
+	document.getElementById("des_Q").innerHTML = "Flow rate (Q) = " + 6 + " m<sup>3</sup>/s (Fixed)";
+	document.getElementById("des_P").innerHTML = "Power generated per day (P) = " + desPowerPerDay + " kW"; // formula result / 24
+	document.getElementById("des_E").innerHTML = "Energy generated per day (E) = " + _power + " kWh"; // formula result
+	document.getElementById("des_Extra").innerHTML = "Extra energy produced per day = " + desExtraEnergyProduced + " kWh"; //formula result - D
+
+
+
+
+	//_power = 1000*9.8* sliderVal_1*sliderVal_2*sliderVal_3 ;
+	// document.getElementById("checkBtn").innerHTML = _power;
+  console.log("_power >>>>>>>>>> " + _power);
+
+	//hover_bkgr_fricc_SpecNotMet
+
+
+
+	if(desExtraEnergyProduced < 0){
+
+		$('.hover_bkgr_fricc_SpecNotMet').show();
+		document.getElementById("des_Extra").innerHTML = "Extra energy produced per day = " + 0 + " kWh";
+	}
+
+
+	if(desExtraEnergyProduced > 0){
+		{
+			$('.hover_bkgr_fricc_meet').show();
+
+
+	var homeGlow1 = document.getElementById("villageHome_1");
+  var homeGlow2 = document.getElementById("villageHome_2");
+  if(_power ==0 )
+	{
+		homeGlow1.style.display = "block";
+		homeGlow2.style.display = "none";
+	}
+	else
+	{
+
+		// Function added by Rishabh to give a blinking effect on the images of village
+		var i = 0;
+		$(function () {
+
+			setInterval(function(){
+
+				if(i<10){
+					i++;
+					if (i%2 == 0){
+						homeGlow2.style.display = "block";
+						homeGlow1.style.display = "none";
+					}
+					else{
+						homeGlow1.style.display = "block";
+						homeGlow2.style.display = "none";
+					}
+				}
+			},500)
+		});
+		// Function to blink the images end here
+
+		homeGlow2.style.display = "block";
+		homeGlow1.style.display = "none";
+	}
+	}
+
+}
+
+
+}
+}
+/*-------------------------------------------- end of if submit btn ------------------------------*/
+
+
+
+/*-------------------------------------------- end of submit btn ------------------------------*/
+
+
+
+
+/*-----------------------------rotating turbine-----------------------------------*/
+
+
+
+var container = document.getElementById('imagesContainer');
+// houses the dynamically loaded images
+var images = new Array();
+// list of the images that will be loaded dynamically
+var imageFiles = new Array(
+	"turbine/Motor Rotation0001.png",
+	"turbine/Motor Rotation0002.png",
+	"turbine/Motor Rotation0003.png",
+	"turbine/Motor Rotation0004.png",
+	"turbine/Motor Rotation0005.png",
+	"turbine/Motor Rotation0006.png",
+	"turbine/Motor Rotation0007.png",
+	"turbine/Motor Rotation0008.png",
+	"turbine/Motor Rotation0009.png",
+	"turbine/Motor Rotation0010.png",
+	"turbine/Motor Rotation0011.png",
+	"turbine/Motor Rotation0012.png",
+	"turbine/Motor Rotation0013.png",
+	"turbine/Motor Rotation0014.png",
+	"turbine/Motor Rotation0015.png",
+	"turbine/Motor Rotation0016.png",
+	"turbine/Motor Rotation0017.png",
+	"turbine/Motor Rotation0018.png",
+	"turbine/Motor Rotation0019.png",
+	"turbine/Motor Rotation0020.png",
+	"turbine/Motor Rotation0021.png",
+	"turbine/Motor Rotation0022.png",
+	"turbine/Motor Rotation0023.png",
+	"turbine/Motor Rotation0024.png",
+	"turbine/Motor Rotation0025.png",
+	"turbine/Motor Rotation0026.png",
+	"turbine/Motor Rotation0027.png",
+	"turbine/Motor Rotation0028.png",
+	"turbine/Motor Rotation0029.png",
+	"turbine/Motor Rotation0030.png",
+	"turbine/Motor Rotation0031.png",
+	"turbine/Motor Rotation0032.png",
+	"turbine/Motor Rotation0033.png",
+	"turbine/Motor Rotation0034.png",
+	"turbine/Motor Rotation0035.png",
+	"turbine/Motor Rotation0036.png",
+	"turbine/Motor Rotation0037.png",
+	"turbine/Motor Rotation0038.png",
+	"turbine/Motor Rotation0039.png",
+	"turbine/Motor Rotation0040.png",
+	"turbine/Motor Rotation0041.png",
+	"turbine/Motor Rotation0042.png",
+	"turbine/Motor Rotation0043.png",
+	"turbine/Motor Rotation0044.png",
+	"turbine/Motor Rotation0045.png",
+	"turbine/Motor Rotation0046.png",
+	"turbine/Motor Rotation0047.png",
+	"turbine/Motor Rotation0048.png",
+	"turbine/Motor Rotation0049.png",
+	"turbine/Motor Rotation0050.png"
+
+
+);
+// max images from the array of image file names
+var maxImages = imageFiles.length;
+// the image count, to track where we are in the images array
+var imageCount = 0;
+
+function init(){
+	var i;
+	var img = null;
+	for(i = 0; i < maxImages; i++){
+		// new image created, overwrites previous image within the for loop
+		img = new Image();
+
+		// set the src attribute path to the image file names in the for loop
+		img.src = imageFiles[i];
+
+/*---------------------------------------------- need to resize turbine image through css CLASS -----------------------------------*/
+		img.style.height = '70px';
+    	img.style.width = '150px';
+
+		/*img.rotatingTurbingSize;
+    	img.rotatingTurbingSize;*/
+
+		// if last array index, set onload complete handler
+		if(i == (maxImages - 1)){
+			img.onload = imagesLoaded;
+		}
+		// store the image object to the images array
+		images.push(img);
+	}
+}
+// this essentially starts our loaded sequence for the first time and sets the first image
+function imagesLoaded(evt){
+	container.appendChild(images[imageCount]);
+	if(interval != 0){
+		startTimeout();
+	}
+
+}
+// this essentially cycles through the array of images and swaps out the current image for the next image
+function nextImage(){
+	container.removeChild(container.firstChild);
+	imageCount++;
+	if(imageCount == (maxImages - 1)){
+		imageCount = 0;
+	}
+	container.appendChild(images[imageCount]);
+	if(interval != 0){
+		startTimeout();
+	}
+}
+// wrapper for the interval timeout so we only declare once here
+function startTimeout(){
+	setTimeout('nextImage()', interval);
+}
+
+/*----------------------------------------------------------------------------------------------------------*/
+$('.hover_bkgr_fricc').click(function(){
+		        $('.hover_bkgr_fricc').hide();
+		    });
+		    $('.popupCloseButton').click(function(){
+		        $('.hover_bkgr_fricc').hide();
+		    });
+
+
+$('.hover_bkgr_fricc_exceed').click(function(){
+		        $('.hover_bkgr_fricc_exceed').hide();
+		    });
+		    $('.popupCloseButton').click(function(){
+		        $('.hover_bkgr_fricc_exceed').hide();
+		    });
+
+
+
+$('.hover_bkgr_fricc_meet').click(function(){
+		        $('.hover_bkgr_fricc_meet').hide();
+		        //location.reload();
+		    });
+		    $('.popupCloseButton').click(function(){
+		        $('.hover_bkgr_fricc_meet').hide();
+		       // location.reload();
+
+		    });
+
+$('.hover_bkgr_fricc_SpecNotMet').click(function(){
+		        $('.hover_bkgr_fricc_SpecNotMet').hide();
+		        //location.reload();	//Changes made by Rishabh to stop the reloading of page on closing button on popup
+		    });
+		    $('.popupCloseButton').click(function(){
+		        $('.hover_bkgr_fricc_SpecNotMet').hide();
+		        //location.reload();    //Changes made by Rishabh to stop the reloading of page on closing button on popup
+
+		    });
+
+
+
+/*---------------------------------------------------------------------------------------------------------*/
+init();
+
+
+</script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+<script type="text/javascript">
+//paste this code under the head tag or in a separate js file.
+	// Wait for window load
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	});
+</script>
+</body>
+</html>
